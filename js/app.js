@@ -40,6 +40,12 @@ myApp.controller('HomeController', function ($scope, $http) {
     .bind("geocode:result", function(event, result){
       console.log(result);
       $scope.location = result;
+      
+      var lat_r = 2 * Math.round(result.geometry.location.k / 2) + 1;
+      var lng_r = 2 * Math.round(result.geometry.location.B / 2) + 1;
+      console.log("lat: " + lat_r + " lng: " + lng_r);
+      $scope.opts.basin_id = basin[String(lat_r)][String(lng_r)];
+      
       $scope.$apply();
     })
   
