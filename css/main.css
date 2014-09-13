@@ -85,20 +85,23 @@ body {
 .rainfall-display li img {
   max-width: 30px;
 }
-/*NAVIGATION*/
+/*NAVIGATION*/ 
 .next-arrow,
 .prev-arrow {
   background: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 0px;
   bottom: 0px;
-  padding-top: 25%;
+  /*padding-top: 25%;*/
+
   text-align: center;
   width: 40px;
+  z-index: 9999;
 }
 .next-arrow img,
 .prev-arrow img {
   max-width: 90%;
+  margin-top: 50%;
 }
 .next-arrow:hover,
 .prev-arrow:hover {
@@ -106,4 +109,4 @@ body {
 }
 .next-arrow {
   right: 0px;
-} 
+}
