@@ -91,10 +91,10 @@
       </div>
     </div>
     <div class='container'>
-        <h1>Angular JS Test</h1>
+<!--         <h1>Angular JS Test</h1>
        <div ng-app="">
   <p>Name: <input type="text" ng-model="name"></p>
-  <p ng-bind="name"></p>
+  <p ng-bind="name"></p> -->
 </div>
 
 
@@ -103,25 +103,42 @@
 
     <div class='container climate-change-content'>
       <div class='row'>
-        <div class='col-xs-12'>
-          <div class='container'>
-            <div class='row'>
+        <!-- <div class='col-xs-12'> -->
+          <!-- <div class='container'> -->
+            <!-- <div class='row'> -->
+              <div class="col-xs-12 text-center">
+                Present AVG (1991 - 2010)
+              </div>
               <div class='col-xs-6 text-center'>
                 <h2>Avg High</h2>
-                <p class='degree-display'><span>70</span> degrees</p>
+                <p class='degree-display'>
+                  <span class="degree-number">70</span> 
+                  <span class="degrees-text">degrees</span>
+                </p>
               </div>
               <div class='col-xs-6 text-center'>
                 <h2>Avg Low</h2>
-                <p class='degree-display'><span>70</span> degrees</p>
+                <p class='degree-display'>
+                  <span class="degree-number">70</span> 
+                  <span class="degrees-text">degrees</span>
+                </p>
               </div>
             </div>
             <div class='row'>
-              <div class='col-xs-12'>
-              Avg Rainfall
+              <div class='col-xs-12 text-center'>
+                  <div class="rainfall-container">
+                  <h3>Avg Rainfall</h3>
+                  <ul class="rainfall-display">
+                    <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
+                    <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
+                    <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
+
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
       </div>
     </div>
     <div class="container" style='display: none'>
