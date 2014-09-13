@@ -1,0 +1,35 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+.page-title{
+	text-transform: uppercase;
+	text-align: center;
+}
+
+
+
+
+#geocode-button{
+	width: 50%;
+	margin: 0 auto;
+	display: block;
+}
+.user-address{
+	display: block;
+	width: 100%;
+	padding: 10px;
+}
+
+
+.climate-change-content{
+	background: rgba(0,0,0,0.3);
+}
+
+
