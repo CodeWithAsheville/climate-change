@@ -3,7 +3,7 @@ var myApp = angular.module('climate', []);
 myApp.controller('HomeController', function ($scope, $http) {
   $scope.location = null;
   $scope.present = { avg_high: null, avg_low: null };
-  $scope.future = { avg_high: null, avg_low: null };
+  $scope.future = { avg_high: null, avg_low: null, precip: null };
   
   $scope.opts = {
     future_start: 2046, 
@@ -19,6 +19,8 @@ myApp.controller('HomeController', function ($scope, $http) {
   $scope.load_json = function(){
     var url_min = "http://www.corsproxy.com/climatedataapi.worldbank.org/climateweb/rest/v1/basin/mavg/ensemble/a2/50/tmin_means/" + $scope.opts.future_start + "/" + $scope.opts.future_end + "/" + $scope.opts.basin_id + ".JSON";
     var url_max = "http://www.corsproxy.com/climatedataapi.worldbank.org/climateweb/rest/v1/basin/mavg/ensemble/a2/50/tmax_means/" + $scope.opts.future_start + "/" + $scope.opts.future_end + "/" + $scope.opts.basin_id + ".JSON";
+    
+    var url_pre = "http://www.corsproxy.com/climatedataapi.worldbank.org/climateweb/rest/v1/basin/mavg/ensemble/a2/50/ppt_means/" + $scope.opts.future_start + "/" + $scope.opts.future_end + "/" + $scope.opts.basin_id + ".JSON";
     
     var url_amin = "http://www.corsproxy.com/climatedataapi.worldbank.org/climateweb/rest/v1/basin/manom/ensemble/a2/50/tmin_means/" + $scope.opts.future_start + "/" + $scope.opts.future_end + "/" + $scope.opts.basin_id + ".JSON";
 
@@ -45,6 +47,12 @@ myApp.controller('HomeController', function ($scope, $http) {
             console.log(data);
             $scope.present.avg_low = round($scope.future.avg_low - data[0].monthVals[$scope.opts.month]);
           });
+      });
+    
+    $http.get(url_pre).
+      success(function(data, status, headers, config) {
+        console.log(data);
+        $scope.future.precip = round(data[0].monthVals[$scope.opts.month]);
       });
   }
     
