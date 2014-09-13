@@ -58,7 +58,6 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="page-head-container">
       <div class="container">
-      http://siddii.github.io/angular-timer/app/js/timer.js
         <!-- INFORMATION LINKS -->
         <div class="info-container">
           <div class="info-nav">
@@ -106,7 +105,7 @@
           <div class='col-lg-12'>
             <select class="form-control" ng-model='opts.month' ng-change='load_json()'>
               <option value='1'>January</option>
-              <option value='2'>Febraury</option>
+              <option value='2'>February</option>
               <option value='3'>March</option>
               <option value='4'>April</option>
               <option value='5'>May</option>
@@ -136,21 +135,21 @@
       <div class='container climate-change-content climate-change-content-past' style='display: none'>
         <div class='row'>
           <div class="col-xs-12 text-center climate-content-header">
-            PAST AVG (1991 - 2010)
+            PAST AVG (1961 - 2000)
           </div>
           <!-- <div class="prev-arrow"><img src="images/arrow-prev.png" alt="prev arrow"/></div> -->
           <div class='col-xs-6 temp-left'>
             <h2>Avg High</h2>
             <p class='degree-display'>
-              <span class="degree-number">{{ present.avg_high | number: 0 }}&deg;</span> 
-              <span class="degrees-text">Celcius</span>
+              <span class="degree-number">{{ past.avg_high | number: 0 }}&deg;</span> 
+              <span class="degrees-text">Celsius</span>
             </p>
           </div>
           <div class='col-xs-6 temp-right'>
             <h2>Avg Low</h2>
             <p class='degree-display'>
-              <span class="degree-number">{{ present.avg_low | number: 0 }}&deg;</span> 
-              <span class="degrees-text">Celcius</span>
+              <span class="degree-number">{{ past.avg_low | number: 0 }}&deg;</span> 
+              <span class="degrees-text">Celsius</span>
             </p>
           </div>
           <div class="next-arrow"><img src="images/arrow-next.png" alt="prev arrow"/></div>
@@ -172,20 +171,20 @@
       <div class='container climate-change-content climate-change-content-present'>
         <div class='row'>
           <div class="col-xs-12 text-center climate-content-header">
-            Present AVG ({{ opts.present_start }} - {{ opts.present_end }})
+            Present AVG
           </div>
           <div class="prev-arrow"><img src="images/arrow-prev.png" alt="prev arrow"/></div>
           <div class='col-xs-6 temp-left'>
             <h2>Avg High</h2>
             <p class='degree-display'>
-            <span class="degree-number">{{ future.avg_high | number: 0 }}&deg; </span> 
+            <span class="degree-number">{{ present.avg_high | number: 0 }}&deg; </span> 
               <span class="degrees-text">Celcius</span>
             </p>
           </div>
           <div class='col-xs-6 temp-right'>
             <h2>Avg Low</h2>
             <p class='degree-display'>
-            <span class="degree-number">{{ future.avg_low | number: 0 }}&deg; </span> 
+            <span class="degree-number">{{ present.avg_low | number: 0 }}&deg; </span> 
               <span class="degrees-text">Celcius</span>
             </p>
           </div>
@@ -194,7 +193,7 @@
         <div class='row'>
           <div class='col-xs-12 text-center'>
               <div class="rainfall-container">
-              <h3>Avg Rainfall: {{ future.precip }}</h3>
+              <h3>Avg Rainfall</h3>
               <ul class="rainfall-display">
                 <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
                 <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
@@ -209,20 +208,20 @@
       <div class='container climate-change-content climate-change-content-future' style='display: none'>
           <div class='row'>
             <div class="col-xs-12 text-center climate-content-header">
-              Future AVG (1991 - 2010)
+              Future AVG ({{opts.future_start}} - {{opts.future_end}})
             </div>
             <div class="prev-arrow"><img src="images/arrow-prev.png" alt="prev arrow"/></div>
             <div class='col-xs-6 temp-left'>
               <h2>Avg High</h2>
               <p class='degree-display'>
-                <span class="degree-number">70&deg; </span> 
+                <span class="degree-number">{{ future.avg_high | number: 0 }}&deg; </span> 
                 <span class="degrees-text">Celcius</span>
               </p>
             </div>
             <div class='col-xs-6 temp-right'>
               <h2>Avg Low</h2>
               <p class='degree-display'>
-                <span class="degree-number">70&deg; </span> 
+                <span class="degree-number">{{ future.avg_low | number: 0 }}&deg; </span> 
                 <span class="degrees-text">Celcius</span>
               </p>
             </div>
@@ -231,7 +230,7 @@
           <div class='row'>
             <div class='col-xs-12 text-center'>
                 <div class="rainfall-container">
-                <h3>Avg Rainfall</h3>
+                <h3>Avg Rainfall: {{ future.precip }}</h3>
                 <ul class="rainfall-display">
                   <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
                   <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>

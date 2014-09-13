@@ -1,7 +1,8 @@
 var myApp = angular.module('climate', []);
 
 myApp.controller('HomeController', function ($scope, $http) {
-  $scope.location = null;
+  $scope.location = {B: -82.65639099999999, k: 35.544517};
+  $scope.past = { avg_high: null, avg_low: null };
   $scope.present = { avg_high: null, avg_low: null };
   $scope.future = { avg_high: null, avg_low: null, precip: null };
   
@@ -17,14 +18,15 @@ myApp.controller('HomeController', function ($scope, $http) {
   }
   
   $scope.load_json = function(){
-    var url_min = "http://www.corsproxy.com/climatedataapi.worldbank.org/climateweb/rest/v1/basin/mavg/ensemble/a2/50/tmin_means/" + $scope.opts.future_start + "/" + $scope.opts.future_end + "/" + $scope.opts.basin_id + ".JSON";
-    var url_max = "http://www.corsproxy.com/climatedataapi.worldbank.org/climateweb/rest/v1/basin/mavg/ensemble/a2/50/tmax_means/" + $scope.opts.future_start + "/" + $scope.opts.future_end + "/" + $scope.opts.basin_id + ".JSON";
+    var url_start = "http://www.corsproxy.com/climatedataapi.worldbank.org/climateweb/rest/v1/basin/";
+    var url_end = "/" + $scope.opts.future_start + "/" + $scope.opts.future_end + "/" + $scope.opts.basin_id + ".JSON";
     
-    var url_pre = "http://www.corsproxy.com/climatedataapi.worldbank.org/climateweb/rest/v1/basin/mavg/ensemble/a2/50/ppt_means/" + $scope.opts.future_start + "/" + $scope.opts.future_end + "/" + $scope.opts.basin_id + ".JSON";
-    
-    var url_amin = "http://www.corsproxy.com/climatedataapi.worldbank.org/climateweb/rest/v1/basin/manom/ensemble/a2/50/tmin_means/" + $scope.opts.future_start + "/" + $scope.opts.future_end + "/" + $scope.opts.basin_id + ".JSON";
-
-    var url_amax = "http://www.corsproxy.com/climatedataapi.worldbank.org/climateweb/rest/v1/basin/manom/ensemble/a2/50/tmax_means/" + $scope.opts.future_start + "/" + $scope.opts.future_end + "/" + $scope.opts.basin_id + ".JSON";
+    var url_min = url_start + "mavg/ensemble/a2/50/tmin_means" + url_end;
+    var url_max = url_start + "mavg/ensemble/a2/50/tmax_means" + url_end;
+    var url_pre = url_start + "mavg/ensemble/a2/50/ppt_means" + url_end;
+    var url_amin = url_start + "manom/ensemble/a2/50/tmin_means" + url_end;
+    var url_amax = url_start + "manom/ensemble/a2/50/tmax_means/" + url_end;
+    var url_wund = "http://www.corsproxy.com/api.wunderground.com/api/fcb068a143892194/almanac/q/" + $scope.location.k + "," + $scope.location.B + ".json";
     
     $http.get(url_min).
       success(function(data, status, headers, config) {
@@ -34,7 +36,7 @@ myApp.controller('HomeController', function ($scope, $http) {
         $http.get(url_amax).
           success(function(data, status, headers, config) {
             console.log(data);
-            $scope.present.avg_high = round($scope.future.avg_high - data[0].monthVals[$scope.opts.month]);
+            $scope.past.avg_high = round($scope.future.avg_high - data[0].monthVals[$scope.opts.month]);
           });
       });
     $http.get(url_max).
@@ -45,7 +47,7 @@ myApp.controller('HomeController', function ($scope, $http) {
         $http.get(url_amin).
           success(function(data, status, headers, config) {
             console.log(data);
-            $scope.present.avg_low = round($scope.future.avg_low - data[0].monthVals[$scope.opts.month]);
+            $scope.past.avg_low = round($scope.future.avg_low - data[0].monthVals[$scope.opts.month]);
           });
       });
     
@@ -54,19 +56,28 @@ myApp.controller('HomeController', function ($scope, $http) {
         console.log(data);
         $scope.future.precip = round(data[0].monthVals[$scope.opts.month]);
       });
-  }
+    
+    $http.get(url_wund).
+      success(function(data, status, headers, config) {
+        console.log("wund");
+        console.log(data);
+        $scope.present.avg_high = data.almanac.temp_high.normal.C;
+        $scope.present.avg_low = data.almanac.temp_low.normal.C;
+      });
+    }
     
   $(".user-address").geocomplete()
     .bind("geocode:result", function(event, result){
       console.log(result);
-      $scope.location = result;
+      $scope.location = result.geometry.location;
       
-      var lat_r = Math.round(result.geometry.location.k);
-      var lng_r = Math.round(result.geometry.location.B);
+      var lat_r = Math.round($scope.location.k);
+      var lng_r = Math.round($scope.location.B);
       console.log("lat: " + lat_r + " lng: " + lng_r);
       $scope.opts.basin_id = basin[String(lat_r)][String(lng_r)];
       
       $scope.$apply();
+      $scope.load_json();
     })
   
   $scope.load_json();
