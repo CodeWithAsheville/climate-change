@@ -104,17 +104,17 @@
             PAST AVG (1991 - 2010)
           </div>
           <!-- <div class="prev-arrow"><img src="images/arrow-prev.png" alt="prev arrow"/></div> -->
-          <div class='col-xs-6 text-center temperature-left'>
+          <div class='col-xs-6 text-center text-right'>
             <h2>Avg High</h2>
             <p class='degree-display'>
-              <span class="degree-number">{{ present.avg_high | number: 0 }}</span> 
+              <span class="degree-number">{{ present.avg_high | number: 0 }}&deg;</span> 
               <span class="degrees-text">degrees</span>
             </p>
           </div>
-          <div class='col-xs-6 text-center temperature-right'>
+          <div class='col-xs-6 text-center text-left'>
             <h2>Avg Low</h2>
             <p class='degree-display'>
-              <span class="degree-number">{{ present.avg_low | number: 0 }}</span> 
+              <span class="degree-number">{{ present.avg_low | number: 0 }}&deg;</span> 
               <span class="degrees-text">degrees</span>
             </p>
           </div>
@@ -140,17 +140,17 @@
             Present AVG ({{ opts.present_start }} - {{ opts.present_end }})
           </div>
           <div class="prev-arrow"><img src="images/arrow-prev.png" alt="prev arrow"/></div>
-          <div class='col-xs-6 text-center temperature-left'>
+          <div class='col-xs-6 text-right'>
             <h2>Avg High</h2>
             <p class='degree-display'>
-            <span class="degree-number">{{ future.avg_high | number: 0 }}</span> 
+            <span class="degree-number">{{ future.avg_high | number: 0 }}&deg; </span> 
               <span class="degrees-text">degrees</span>
             </p>
           </div>
-          <div class='col-xs-6 text-center temperature-right'>
+          <div class='col-xs-6 text-left'>
             <h2>Avg Low</h2>
             <p class='degree-display'>
-            <span class="degree-number">{{ future.avg_low | number: 0 }}</span> 
+            <span class="degree-number">{{ future.avg_low | number: 0 }}&deg; </span> 
               <span class="degrees-text">degrees</span>
             </p>
           </div>
@@ -177,17 +177,17 @@
               Future AVG (1991 - 2010)
             </div>
             <div class="prev-arrow"><img src="images/arrow-prev.png" alt="prev arrow"/></div>
-            <div class='col-xs-6 text-center temperature-left'>
+            <div class='col-xs-6 text-center text-right'>
               <h2>Avg High</h2>
               <p class='degree-display'>
-                <span class="degree-number">70</span> 
+                <span class="degree-number">70&deg; </span> 
                 <span class="degrees-text">degrees</span>
               </p>
             </div>
-            <div class='col-xs-6 text-center temperature-right'>
+            <div class='col-xs-6 text-left'>
               <h2>Avg Low</h2>
               <p class='degree-display'>
-                <span class="degree-number">70</span> 
+                <span class="degree-number">70&deg; </span> 
                 <span class="degrees-text">degrees</span>
               </p>
             </div>
