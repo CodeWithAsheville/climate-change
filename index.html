@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="climate"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -23,13 +23,10 @@
 
         <link rel="stylesheet" type="text/css" href="css/main.css" />
 
-
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/angular.min.js"></script>
-        <script src="js/geocoder-service.js"></script>
-        <script src="js/app.js"></script>
     </head>
-    <body>
+    <body ng-controller="HomeController">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -72,7 +69,7 @@
         </div>
         <div class='row'>
           <div class='col-lg-12'>
-            <select class="form-control">
+            <select class="form-control" ng-model='opts.month' ng-change='load_json()'>
               <option value='1'>January</option>
               <option value='2'>Febraury</option>
               <option value='3'>March</option>
@@ -125,6 +122,36 @@
               </ul>
             </div>
           </div>
+
+
+    </div>
+
+    <div class='row'>
+      <div class='col-lg-12'>
+        <input type='text' ng-model='opts.present_start' ng-change='load_json()' />
+        <input type='text' ng-model='opts.present_end' ng-change='load_json()' />
+        <input type='text' ng-model='opts.basin_id' ng-change='load_json()' />
+      </div>
+    </div>
+
+    <div class='container climate-change-content'>
+      <div class='row'>
+        <div class="col-xs-12 text-center">
+          Present AVG ({{ opts.present_start }} - {{ opts.present_end }})
+        </div>
+        <div class='col-xs-6 text-center'>
+          <h2>Avg High</h2>
+          <p class='degree-display'>
+            <span class="degree-number">{{ future.avg_high }}</span> 
+            <span class="degrees-text">degrees</span>
+          </p>
+        </div>
+        <div class='col-xs-6 text-center'>
+          <h2>Avg Low</h2>
+          <p class='degree-display'>
+            <span class="degree-number">{{ future.avg_low }}</span> 
+            <span class="degrees-text">degrees</span>
+          </p>
         </div>
       </div>
       <div class='container climate-change-content climate-change-content-present'  ng-show="showActions" ng-click="showActions = false">
@@ -214,15 +241,18 @@
 
       </div>
 
-    </div>   
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-        <script src="js/user_interface.js"></script>
+    </div>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.4/jquery.geocomplete.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-
+        <script src="js/app.js"></script>
+        <script src="js/user_interface.js"></script>
+        
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
