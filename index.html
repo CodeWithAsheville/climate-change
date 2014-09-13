@@ -87,45 +87,6 @@
         </div>        
       </div>
     </div>
-
-    <div class='climate-change-content-window'>
-      <div ng-show="!showActions" ng-click="showActions = true" class='container climate-change-content climate-change-content-past'>
-        <div class='row'>
-          <div class="col-xs-12 text-center">
-            PAST AVG (1991 - 2010)
-          </div>
-          <div class="prev-arrow"><</div>
-          <div class='col-xs-6 text-center'>
-            <h2>Avg High</h2>
-            <p class='degree-display'>
-              <span class="degree-number">70</span> 
-              <span class="degrees-text">degrees</span>
-            </p>
-          </div>
-          <div class='col-xs-6 text-center'>
-            <h2>Avg Low</h2>
-            <p class='degree-display'>
-              <span class="degree-number">70</span> 
-              <span class="degrees-text">degrees</span>
-            </p>
-          </div>
-          <div class="next-arrow">></div>
-        </div>
-        <div class='row'>
-          <div class='col-xs-12 text-center'>
-              <div class="rainfall-container">
-              <h3>Avg Rainfall</h3>
-              <ul class="rainfall-display">
-                <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
-                <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
-                <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
-              </ul>
-            </div>
-          </div>
-
-
-    </div>
-
     <div class='row'>
       <div class='col-lg-12'>
         <input type='text' ng-model='opts.present_start' ng-change='load_json()' />
@@ -133,33 +94,14 @@
         <input type='text' ng-model='opts.basin_id' ng-change='load_json()' />
       </div>
     </div>
-
-    <div class='container climate-change-content'>
-      <div class='row'>
-        <div class="col-xs-12 text-center">
-          Present AVG ({{ opts.present_start }} - {{ opts.present_end }})
-        </div>
-        <div class='col-xs-6 text-center'>
-          <h2>Avg High</h2>
-          <p class='degree-display'>
-            <span class="degree-number">{{ future.avg_high }}</span> 
-            <span class="degrees-text">degrees</span>
-          </p>
-        </div>
-        <div class='col-xs-6 text-center'>
-          <h2>Avg Low</h2>
-          <p class='degree-display'>
-            <span class="degree-number">{{ future.avg_low }}</span> 
-            <span class="degrees-text">degrees</span>
-          </p>
-        </div>
-      </div>
-      <div class='container climate-change-content climate-change-content-present'  ng-show="showActions" ng-click="showActions = false">
+    <div class='climate-change-content-window'>
+      <!-- Start Past -->
+      <div class='container climate-change-content climate-change-content-past'>
         <div class='row'>
           <div class="col-xs-12 text-center">
-            Present AVG (1991 - 2010)
+            PAST AVG (1991 - 2010)
           </div>
-          <div class="prev-arrow"><</div>
+          <div class="prev-arrow"><img src="images/arrow-prev.png" alt="prev arrow"/></div>
           <div class='col-xs-6 text-center'>
             <h2>Avg High</h2>
             <p class='degree-display'>
@@ -174,7 +116,7 @@
               <span class="degrees-text">degrees</span>
             </p>
           </div>
-          <div class="next-arrow">></div>
+          <div class="next-arrow"><img src="images/arrow-next.png" alt="prev arrow"/></div>
         </div>
         <div class='row'>
           <div class='col-xs-12 text-center'>
@@ -188,49 +130,104 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
-    <!-- End Present -->
-    <!-- Start Future -->
-    <div class='container climate-change-content climate-change-content-future'  ng-show="showActions" ng-click="showActions = false">
+      <!-- Start Present -->
+      <div class='container climate-change-content climate-change-content-present'>
         <div class='row'>
           <div class="col-xs-12 text-center">
-            Present AVG (1991 - 2010)
+            Present AVG ({{ opts.present_start }} - {{ opts.present_end }})
           </div>
-          <div class="prev-arrow col-xs-1"><</div>
-          <div class='col-xs-5 col-xs-offset-1 text-center'>
+          <div class='col-xs-6 text-center'>
             <h2>Avg High</h2>
             <p class='degree-display'>
-              <span class="degree-number">70</span> 
+              <span class="degree-number">{{ future.avg_high }}</span> 
               <span class="degrees-text">degrees</span>
             </p>
           </div>
-          <div class='col-xs-5 text-center'>
+          <div class='col-xs-6 text-center'>
             <h2>Avg Low</h2>
             <p class='degree-display'>
-              <span class="degree-number">70</span> 
+              <span class="degree-number">{{ future.avg_low }}</span> 
               <span class="degrees-text">degrees</span>
             </p>
           </div>
-          <div class="next-arrow col-xs-1">></div>
         </div>
-        <div class='row'>
-          <div class='col-xs-12 text-center'>
-              <div class="rainfall-container">
-              <h3>Avg Rainfall</h3>
-              <ul class="rainfall-display">
-                <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
-                <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
-                <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
-              </ul>
+        <div class='container climate-change-content climate-change-content-present' >
+          <div class='row'>
+            <div class="col-xs-12 text-center">
+              Present AVG (1991 - 2010)
+            </div>
+            <div class="prev-arrow"><img src="images/arrow-prev.png" alt="prev arrow"/></div>
+            <div class='col-xs-6 text-center'>
+              <h2>Avg High</h2>
+              <p class='degree-display'>
+                <span class="degree-number">70</span> 
+                <span class="degrees-text">degrees</span>
+              </p>
+            </div>
+            <div class='col-xs-6 text-center'>
+              <h2>Avg Low</h2>
+              <p class='degree-display'>
+                <span class="degree-number">70</span> 
+                <span class="degrees-text">degrees</span>
+              </p>
+            </div>
+            <div class="next-arrow"><img src="images/arrow-next.png" alt="prev arrow"/></div>
+          </div>
+          <div class='row'>
+            <div class='col-xs-12 text-center'>
+                <div class="rainfall-container">
+                <h3>Avg Rainfall</h3>
+                <ul class="rainfall-display">
+                  <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
+                  <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
+                  <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- End Future -->
-
-      <hr>
+      <!-- End Present -->
+      <!-- Start Future -->
+      <div class='container climate-change-content climate-change-content-future'>
+          <div class='row'>
+            <div class="col-xs-12 text-center">
+              Present AVG (1991 - 2010)
+            </div>
+            <div class="prev-arrow col-xs-1"><img src="images/arrow-prev.png" alt="prev arrow"/></div>
+            <div class='col-xs-5 col-xs-offset-1 text-center'>
+              <h2>Avg High</h2>
+              <p class='degree-display'>
+                <span class="degree-number">70</span> 
+                <span class="degrees-text">degrees</span>
+              </p>
+            </div>
+            <div class='col-xs-5 text-center'>
+              <h2>Avg Low</h2>
+              <p class='degree-display'>
+                <span class="degree-number">70</span> 
+                <span class="degrees-text">degrees</span>
+              </p>
+            </div>
+            <div class="next-arrow col-xs-1"><img src="images/arrow-prev.png" alt="prev arrow"/></div>
+          </div>
+          <div class='row'>
+            <div class='col-xs-12 text-center'>
+                <div class="rainfall-container">
+                <h3>Avg Rainfall</h3>
+                <ul class="rainfall-display">
+                  <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
+                  <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
+                  <li><img src="images/rain-drop.png" alt="raindrop icon"/></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!-- End Future -->
+    </div> <!-- /end window -->
+    <hr>
 
     </div> <!-- /container -->     
     <div class='container'>
