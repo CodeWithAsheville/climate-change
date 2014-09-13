@@ -41,12 +41,12 @@ body {
   font-size: 14px;
   text-align: center;
   padding-top: 6px;
-  padding-bottom: 6px;
+  padding-bottom: 6px; 
 }
 #geocode-button img {
   max-height: 30px;
 }
-.user-address { 
+.user-address {
   display: block;
   width: 100%;
   padding: 10px;
@@ -92,7 +92,7 @@ body {
   text-align: center;
 }
 .rainfall-display {
-  display: inline-block; 
+  display: inline-block;
   padding-left: 0px;
   margin-top: 10px;
 }
@@ -131,4 +131,42 @@ body {
 .next-arrow {
   right: 0px;
 }
-/*MEDIA QUERIES*/
+/*INFO PANE*/
+.info-content-pane {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  display: none;
+  min-height: 200px;
+}
+.info-content-pane p {
+  display: none;
+  color: white;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.info-content-pane .close-pane {
+  color: #ccc;
+  float: right;
+  font-size: 2em;
+  font-weight: lighter;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.info-content-pane .close-pane:hover {
+  color: white;
+}
+.info-nav {
+  text-align: center;
+  margin: 20px 0px;
+}
+.info-nav a {
+  padding-right: 10px;
+  margin-left: 10px;
+  border-right: 1px solid #DF6000;
+  color: #DF6000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.info-nav a:last-child {
+  border-right: none;
+}
