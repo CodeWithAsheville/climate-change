@@ -8,10 +8,11 @@
   max-width: 320px;
 }
 body {
-  /*	background: red !important;
-	div{
-		background: red !important;
-	}*/
+  background: url('../images/background.jpg');
+  background-attachment: fixed;
+  /*  div{
+    background: red !important;
+  }*/
 
 }
 /*PAGE HEAD STYLES*/
@@ -48,7 +49,26 @@ body {
 .climate-change-content {
   background: rgba(0, 0, 0, 0.3);
   margin-top: 20px;
+  color: white;
 }
-.degree-display span {
+.degree-number {
   font-size: 8em;
+}
+/*RAINFALL DISPLAY*/
+.rainfall-container {
+  text-align: center;
+}
+.rainfall-display {
+  display: inline-block;
+  padding-left: 0px;
+  margin-top: 20px;
+}
+.rainfall-display li {
+  list-style-type: none;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+}
+.rainfall-display li img {
+  max-width: 30px;
 }
