@@ -7,6 +7,10 @@
   width: 100%;
   max-width: 320px;
 }
+h2,
+h3 {
+  font-weight: lighter;
+}
 body {
   background: url('../images/background.jpg');
   background-attachment: fixed;
@@ -14,6 +18,9 @@ body {
     background: red !important;
   }*/
 
+}
+.navbar {
+  display: none;
 }
 /*PAGE HEAD STYLES*/
 .page-head-container {
@@ -50,9 +57,15 @@ body {
   background: rgba(0, 0, 0, 0.3);
   margin-top: 20px;
   color: white;
+  position: relative;
+}
+.degrees-text {
+  clear: both;
+  display: block;
 }
 .degree-number {
   font-size: 8em;
+  font-weight: lighter;
 }
 /*RAINFALL DISPLAY*/
 .rainfall-container {
@@ -72,3 +85,25 @@ body {
 .rainfall-display li img {
   max-width: 30px;
 }
+/*NAVIGATION*/
+.next-arrow,
+.prev-arrow {
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  padding-top: 25%;
+  text-align: center;
+  width: 40px;
+}
+.next-arrow img,
+.prev-arrow img {
+  max-width: 90%;
+}
+.next-arrow:hover,
+.prev-arrow:hover {
+  background: black;
+}
+.next-arrow {
+  right: 0px;
+} 
