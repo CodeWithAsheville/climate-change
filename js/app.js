@@ -53,8 +53,8 @@ myApp.controller('HomeController', function ($scope, $http) {
       console.log(result);
       $scope.location = result;
       
-      var lat_r = 2 * Math.round(result.geometry.location.k / 2) + 1;
-      var lng_r = 2 * Math.round(result.geometry.location.B / 2) + 1;
+      var lat_r = Math.round(result.geometry.location.k);
+      var lng_r = Math.round(result.geometry.location.B);
       console.log("lat: " + lat_r + " lng: " + lng_r);
       $scope.opts.basin_id = basin[String(lat_r)][String(lng_r)];
       
