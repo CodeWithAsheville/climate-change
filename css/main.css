@@ -14,9 +14,9 @@ h3 {
 body {
   background: url('../images/background.jpg');
   background-attachment: fixed;
-  /*  div{
-    background: red !important;
-  }*/
+  /*	div{
+		background: red !important;
+	}*/
 
 }
 .navbar {
@@ -67,11 +67,24 @@ body {
   font-size: 8em;
   font-weight: lighter;
 }
+@media screen and (max-width: 500px) {
+  .degree-number {
+    font-size: 6em;
+  }
+}
+.temp-left {
+  text-align: right;
+  border-bottom: 5px solid red;
+}
+.temp-right {
+  text-align: left;
+  border-bottom: 5px solid blue;
+}
 /*RAINFALL DISPLAY*/
 .rainfall-container {
   text-align: center;
 }
-.rainfall-display {
+.rainfall-display { 
   display: inline-block;
   padding-left: 0px;
   margin-top: 20px;
@@ -85,7 +98,7 @@ body {
 .rainfall-display li img {
   max-width: 30px;
 }
-/*NAVIGATION*/ 
+/*NAVIGATION*/
 .next-arrow,
 .prev-arrow {
   background: rgba(0, 0, 0, 0.3);
@@ -97,6 +110,7 @@ body {
   text-align: center;
   width: 40px;
   z-index: 9999;
+  cursor: pointer;
 }
 .next-arrow img,
 .prev-arrow img {
@@ -110,3 +124,4 @@ body {
 .next-arrow {
   right: 0px;
 }
+/*MEDIA QUERIES*/
