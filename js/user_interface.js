@@ -13,4 +13,13 @@ $(document).ready(function(){
 		elm = jQuery(this).closest('.climate-change-content').prev();
 		elm.show();
 	});
+	jQuery(".info-content-pane").hide();
+
+	
+	jQuery(".info-link-1").on('click', function(){
+		jQuery(".info-content-pane, .info-pane-1").slideDown();
+	});
+	jQuery(".info-link-2").on('click', function(){
+		jQuery(".info-content-pane, .info-pane-2").slideDown();
+	});	
 });
