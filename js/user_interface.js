@@ -15,11 +15,21 @@ $(document).ready(function(){
 	});
 	jQuery(".info-content-pane").hide();
 
-	
+
 	jQuery(".info-link-1").on('click', function(){
 		jQuery(".info-content-pane, .info-pane-1").slideDown();
+		jQuery(".info-pane-2, .info-pane-3").slideUp();
 	});
 	jQuery(".info-link-2").on('click', function(){
 		jQuery(".info-content-pane, .info-pane-2").slideDown();
+		jQuery(".info-pane-1, .info-pane-3").slideUp();
 	});	
+	jQuery(".info-link-3").on('click', function(){
+		jQuery(".info-content-pane, .info-pane-3").slideDown();
+		jQuery(".info-pane-1, .info-pane-2").slideUp();
+	});	
+	jQuery(".info-content-header .close-pane").on('click', function(){
+		jQuery(".info-content-pane, .info-pane-1, .info-pane-2").slideUp();
+		console.log('hi');
+	});
 });

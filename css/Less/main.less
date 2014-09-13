@@ -147,8 +147,46 @@ body{
 
 }
 
-/*MEDIA QUERIES*/
+/*INFO PANE*/
+.info-content-pane{
+	background: rgba(0,0,0,0.3);
+	padding: 10px;
+	display:none;
+	min-height: 200px;
+	p{
+		display:none;
+		color:white;
+		margin-left: 15px;
+		margin-top: 15px;
+	}
+	.close-pane{
+		color:#ccc;
+		float:right;
+		font-size: 2em;
+		font-weight:lighter;
+		margin-right: 15px;
+		cursor:pointer;
+		&:hover{
+			color:white;
+		}
+	}
+}
 
+.info-nav {
+	text-align: center;
+	margin: 20px 0px;
+	a{
+		padding-right: 10px;
+		margin-left: 10px;
+		border-right: 1px solid #DF6000;
+		color: #DF6000;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		&:last-child{
+			border-right: none;
+		}
+	}
+}
 
 
 

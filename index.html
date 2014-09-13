@@ -59,6 +59,40 @@
     <div class="page-head-container">
       <div class="container">
       http://siddii.github.io/angular-timer/app/js/timer.js
+        <!-- INFORMATION LINKS -->
+        <div class="info-container">
+          <div class="info-nav">
+            <a href="#" class="info-link-1">How to use</a>
+            <a href="#" class="info-link-2">How to get involved</a>
+            <a href="#" class="info-link-3">About this project</a>
+          </div>
+          <div class="info-content-pane well">
+            <div class="info-content-header">
+              <span class="close-pane">[ x ]</span>
+            </div>
+            <div class="info-content">
+              <p class="info-pane-1">
+                <b>Look into your Forecast Future</b><br></br>
+                Enter your location in the search field below. Then
+              </p>
+              <p class="info-pane-2">
+                TESTY TESTY 2
+              </p>
+              <p class="info-pane-3">
+                <b>Forecast 2050: "Your Weather Report from the Future"</b><br></br>
+                From Awareness, Comes Action.
+
+                It’s our world: see how climate change affects our future weather.
+
+                Quickly get current averages and future weather information for your location and any place in the world.
+
+                Using data from the World Bank, see climate variables such as temperature and precipitation
+                broken down by monthly averages and climate model projections. Get a glimpse of what your city may feel like in the future. Then help combat climate change. Share and find out how to do your part.
+              </p>              
+            </div>
+          </div>
+        </div>
+       <!-- END INFORMATION LINKS -->      
         <h1 class='page-title'><img src="images/logo-2050.png" alt="logo" /></h1>
         <div class="geo-location-form row">
           <div class="col-xs-9">
@@ -95,27 +129,6 @@
           </div>
         </div> --> 
         <!-- END ANGULAR TEST  --> 
-        <!-- INFORMATION LINKS -->
-        <div class="info-container">
-          <div class="info-nav">
-            <a href="#" class="info-link-1">About this project</a>
-            <a href="#" class="info-link-2">How to get involved</a>
-          </div>
-          <div class="info-content-pane">
-            <div class="info-content-header">
-              x
-            </div>
-            <div class="info-content">
-              <p class="info-pane-1">
-                TESTY TESTY 1
-              </p>
-              <p class="info-pane-2">
-                TESTY TESTY 2
-              </p>
-            </div>
-          </div>
-        </div>
-       <!-- END INFORMATION LINKS -->
       </div>
     </div>   
     <div class='climate-change-content-window'>
@@ -130,14 +143,14 @@
             <h2>Avg High</h2>
             <p class='degree-display'>
               <span class="degree-number">{{ present.avg_high | number: 0 }}&deg;</span> 
-              <span class="degrees-text">Celsius</span>
+              <span class="degrees-text">Celcius</span>
             </p>
           </div>
           <div class='col-xs-6 temp-right'>
             <h2>Avg Low</h2>
             <p class='degree-display'>
               <span class="degree-number">{{ present.avg_low | number: 0 }}&deg;</span> 
-              <span class="degrees-text">Celsius</span>
+              <span class="degrees-text">Celcius</span>
             </p>
           </div>
           <div class="next-arrow"><img src="images/arrow-next.png" alt="prev arrow"/></div>
