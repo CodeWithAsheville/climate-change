@@ -30,12 +30,12 @@
     // });
 
 
-function ClimateChangeController($scope) {
-  // $scope.user_lat = false;
-  // $scope.user_lng = false;
-  // $scope.monthName = [  "",
-  //                       "January", "February", "March", "April", 
-  //                       "May", "June", "July", "August", "September", 
-  //                       "October", "November", "December"
-  //                     ];
-}
+// function ClimateChangeController($scope) {
+//   // $scope.user_lat = false;
+//   // $scope.user_lng = false;
+//   // $scope.monthName = [  "",
+//   //                       "January", "February", "March", "April", 
+//   //                       "May", "June", "July", "August", "September", 
+//   //                       "October", "November", "December"
+//   //                     ];
+// }
