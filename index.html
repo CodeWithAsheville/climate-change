@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
+
         <style>
             body {
                 padding-top: 50px;
@@ -26,8 +27,7 @@
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/angular.min.js"></script>
         <script src="js/geocoder-service.js"></script>
-                <script src="js/app.js"></script>
-
+        <script src="js/app.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -58,96 +58,93 @@
       </div>
     </div>
 
-    <!-- Angular JS App Start -->
-    <div class='app-container'>
-      <div class='app'>
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron">
-          <div class="container">
-            <h1 class='page-title'>Enter Your Location!</h1>
-            <p>
-              <input class='user-address' type='text' value='' placeholder='Enter you address or ZIP' />
-            </p>
-            <p><a class="btn btn-primary btn-lg" id='geocode-button' role="button">Lookup</a></p>
-            <h3>Ressult</h3>
-            <p id='geocode-result'>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="page-head-container">
+      <div class="container">
+        <h1 class='page-title'><img src="images/logo.png" alt="logo" /></h1>
+        <div class="geo-location-form row">
+          <div class="col-xs-9">
+            <input class='user-address form-control' type='text' value='' placeholder='Enter you address or ZIP' />
+          </div>
+          <div class="col-xs-3">
+            <a class="btn btn-primary" id='geocode-button' role="button"><img src="images/location-icon.png" alt="location icon"/></a>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-lg-12'>
+            <select class="form-control">
+              <option value='1'>January</option>
+              <option value='2'>Febraury</option>
+              <option value='3'>March</option>
+              <option value='4'>April</option>
+              <option value='5'>May</option>
+              <option value='6'>June</option>
+              <option value='7'>July</option>
+              <option value='8'>August</option>
+              <option value='9'>September</option>
+              <option value='10'>October</option>
+              <option value='11'>November</option>
+              <option value='12'>December</option>
+            </select>
+          </div>
+        </div>        
+      </div>
+    </div>
+    <div class='container'>
+      
+    </div>
+    <div class='container climate-change-content'>
+      <div class='row'>
+        <div class='col-xs-12'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-6 text-center'>
+                <h2>Avg High</h2>
+                <p class='degree-display'><span>70</span> degrees</p>
+              </div>
+              <div class='col-xs-6 text-center'>
+                <h2>Avg Low</h2>
+                <p class='degree-display'><span>70</span> degrees</p>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12'>
+              Avg Rainfall
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Past</h2>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-md-2'>
+                <p>70 degrees</p>
+              </div>
+              <div class='col-md-2'>
+                <p>70 degrees</p>
+              </div>
+            </div>
+          </div>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Present</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Future</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
 
-            </p>
-          </div>
-        </div>
-        <div class='container'>
-          <div class='row'>
-            <div class='col-lg-12'>
-              <select class="form-control">
-                <option value='1'>January</option>
-                <option value='2'>Febraury</option>
-                <option value='3'>March</option>
-                <option value='4'>April</option>
-                <option value='5'>May</option>
-                <option value='6'>June</option>
-                <option value='7'>July</option>
-                <option value='8'>August</option>
-                <option value='9'>September</option>
-                <option value='10'>October</option>
-                <option value='11'>November</option>
-                <option value='12'>December</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class='container climate-change-content'>
-          <div class='row'>
-            <div class='col-xs-12'>
-              <div class='container'>
-                <div class='row'>
-                  <div class='col-xs-6'>
-                    <h2>Avg High</h2>
-                    <p class='degree-display'>70 degrees</p>
-                  </div>
-                  <div class='col-xs-6'>
-                    <h2>Avg Low</h2>
-                    <p class='degree-display'>70 degrees</p>
-                  </div>
-                </div>
-                <div class='row'>
-                  <div class='col-xs-12'>
-                  Avg Rainfall
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <!-- Example row of columns -->
-          <div class="row">
-            <div class="col-md-4">
-              <h2>Past</h2>
-              <div class='container'>
-                <div class='row'>
-                  <div class='col-md-2'>
-                    <p>70 degrees</p>
-                  </div>
-                  <div class='col-md-2'>
-                    <p>70 degrees</p>
-                  </div>
-                </div>
-              </div>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-              <h2>Present</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-           </div>
-            <div class="col-md-4">
-              <h2>Future</h2>
-              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-          </div>
-        </div><!-- Closes App -->
-      </div><!-- Closes App Container -->
       <hr>
 
       <footer>
@@ -170,6 +167,16 @@
             e.src='http://www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <script type='text/javascript'>
+        console.log('PRC Test');
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position)    {
+              console.log(position);
+             });
+          }
+
         </script>
     </body>
 </html>

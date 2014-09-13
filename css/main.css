@@ -1,35 +1,54 @@
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-.page-title{
-	text-transform: uppercase;
-	text-align: center;
+/*MAIN STYLES*/
+.page-title {
+  text-transform: uppercase;
+  text-align: center;
 }
-
-
-
-
-#geocode-button{
-	width: 50%;
-	margin: 0 auto;
-	display: block;
+.page-title img {
+  width: 100%;
+  max-width: 320px;
 }
-.user-address{
-	display: block;
-	width: 100%;
-	padding: 10px;
+body {
+  /*	background: red !important;
+	div{
+		background: red !important;
+	}*/
+
 }
-
-
-.climate-change-content{
-	background: rgba(0,0,0,0.3);
+/*PAGE HEAD STYLES*/
+.page-head-container {
+  padding-bottom: 20px;
 }
-
-
+/*GEOLOCATION FORM STYLES*/
+.geo-location-form {
+  margin-bottom: 20px;
+}
+.geo-location-form input,
+.geo-location-form a {
+  float: left;
+}
+#geocode-button {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+#geocode-button img {
+  max-height: 30px;
+}
+.user-address {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  min-height: 45px;
+}
+/*INFO DISPLAY STYLES*/
+.climate-change-content {
+  background: rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+.degree-display span {
+  font-size: 8em;
+}
