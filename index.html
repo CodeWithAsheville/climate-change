@@ -24,7 +24,9 @@
 
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="js/angular.min.js"></script>
+                <script src="js/app.js"></script>
+<script src="js/angular.min.js"></script>
+        
         <script src="js/geocoder-service.js"></script>
     </head>
     <body>
@@ -57,8 +59,17 @@
     </div>
 
     <!-- Angular JS App Start -->
-    <div class='app-container' ng-app>
-      <div class='app' ng-controller="ClimateChangeController">
+    <div ng-app>
+      <div ng-controller="SpicyController">
+        <button ng-click="chiliSpicy()">Chili</button>
+        <button ng-click="jalapenoSpicy()">Jalapeño</button>
+        <p>The food is {{spice}} spicy!</p>
+      </div>
+    </div>
+
+
+    <div class='app-container'>
+      <div class='app'>
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
           <div class="container">
@@ -159,7 +170,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
-        <script src="js/app.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
