@@ -57,88 +57,96 @@
       </div>
     </div>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class='page-title'>Enter Your Location!</h1>
-        <p>
-          <input class='user-address' type='text' value='' placeholder='Enter you address or ZIP' />
-        </p>
-        <p><a class="btn btn-primary btn-lg" id='geocode-button' role="button">Lookup</a></p>
-      </div>
-    </div>
-    <div class='container'>
-      <div class='row'>
-        <div class='col-lg-12'>
-          <select class="form-control">
-            <option value='1'>January</option>
-            <option value='2'>Febraury</option>
-            <option value='3'>March</option>
-            <option value='4'>April</option>
-            <option value='5'>May</option>
-            <option value='6'>June</option>
-            <option value='7'>July</option>
-            <option value='8'>August</option>
-            <option value='9'>September</option>
-            <option value='10'>October</option>
-            <option value='11'>November</option>
-            <option value='12'>December</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class='container climate-change-content'>
-      <div class='row'>
-        <div class='col-xs-12'>
-          <div class='container'>
-            <div class='row'>
-              <div class='col-xs-6'>
-                <h2>Avg High</h2>
-                <p class='degree-display'>70 degrees</p>
-              </div>
-              <div class='col-xs-6'>
-                <h2>Avg Low</h2>
-                <p class='degree-display'>70 degrees</p>
-              </div>
-            </div>
-            <div class='row'>
-              <div class='col-xs-12'>
-              Avg Rainfall
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Past</h2>
-          <div class='container'>
-            <div class='row'>
-              <div class='col-md-2'>
-                <p>70 degrees</p>
-              </div>
-              <div class='col-md-2'>
-                <p>70 degrees</p>
-              </div>
-            </div>
-          </div>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Present</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Future</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
+    <!-- Angular JS App Start -->
+    <div class='app-container' ng-app>
+      <div class='app' ng-controller="ClimateChangeController">
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+          <div class="container">
+            <h1 class='page-title'>Enter Your Location!</h1>
+            <p>
+              <input class='user-address' type='text' value='' placeholder='Enter you address or ZIP' />
+            </p>
+            <p><a class="btn btn-primary btn-lg" id='geocode-button' role="button">Lookup</a></p>
+            <h3>Ressult</h3>
+            <p id='geocode-result'>
 
+            </p>
+          </div>
+        </div>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-lg-12'>
+              <select class="form-control">
+                <option value='1'>January</option>
+                <option value='2'>Febraury</option>
+                <option value='3'>March</option>
+                <option value='4'>April</option>
+                <option value='5'>May</option>
+                <option value='6'>June</option>
+                <option value='7'>July</option>
+                <option value='8'>August</option>
+                <option value='9'>September</option>
+                <option value='10'>October</option>
+                <option value='11'>November</option>
+                <option value='12'>December</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class='container climate-change-content'>
+          <div class='row'>
+            <div class='col-xs-12'>
+              <div class='container'>
+                <div class='row'>
+                  <div class='col-xs-6'>
+                    <h2>Avg High</h2>
+                    <p class='degree-display'>70 degrees</p>
+                  </div>
+                  <div class='col-xs-6'>
+                    <h2>Avg Low</h2>
+                    <p class='degree-display'>70 degrees</p>
+                  </div>
+                </div>
+                <div class='row'>
+                  <div class='col-xs-12'>
+                  Avg Rainfall
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <!-- Example row of columns -->
+          <div class="row">
+            <div class="col-md-4">
+              <h2>Past</h2>
+              <div class='container'>
+                <div class='row'>
+                  <div class='col-md-2'>
+                    <p>70 degrees</p>
+                  </div>
+                  <div class='col-md-2'>
+                    <p>70 degrees</p>
+                  </div>
+                </div>
+              </div>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+              <h2>Present</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+           </div>
+            <div class="col-md-4">
+              <h2>Future</h2>
+              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+          </div>
+        </div><!-- Closes App -->
+      </div><!-- Closes App Container -->
       <hr>
 
       <footer>
@@ -164,12 +172,47 @@
         </script>
 
         <script type='text/javascript'>
+
+          <div id='donation-customer-app' >
+            <div class='donation-customer-header'>
+              <div id='donation-customer-lifetime-dontations' class='span6 inner-left'>
+                <h4 class='money-symbol'>$</h4> 
+                <h2>{{lifetimedonations}}</h2> 
+                <span>lifetime donations</span>
+              </div>
+              <div class='donation-tax-year-select-container span2 inner-right'>
+                <select ng-change="changeTaxYear()" ng-model="tax_year" name='tax_year' ng-options="c.name for c in tax_years"></select>
+              </div>
+
+
+        // This will be converted to angular, but I'm testing things out
         console.log('PRC Test');
+        var user_lat = false;
+        var user_lng = false;
+
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position)    {
-              console.log(position);
+              console.log(position.coords);
+              user_lat = position.coords.latitude;
+              user_lng = position.coords.longitude;
+              $("#geocode-result").html(position.coords.latitude+ ", " + position.coords.longitude);
              });
           }
+
+          $(document).ready(function(){
+            
+          });
+//'geolocation', 
+          angular.module('myApp',['geocoder'])
+            .controller('geoCtrl', function ($scope,geolocation,Geocoder ) {
+              geolocation.getLocation().then(function(data){
+                console.log(data);
+                Geocoder.addressForLatLng(data.coords.latitude, data.coords.longitude).then(function(data){
+                  console.log(data)
+                })
+            
+            });
+          });
 
         </script>
     </body>
