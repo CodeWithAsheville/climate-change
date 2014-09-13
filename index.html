@@ -91,8 +91,16 @@
       </div>
     </div>
     <div class='container'>
-      
+        <h1>Angular JS Test</h1>
+       <div ng-app="">
+  <p>Name: <input type="text" ng-model="name"></p>
+  <p ng-bind="name"></p>
+</div>
+
+
     </div>
+
+
     <div class='container climate-change-content'>
       <div class='row'>
         <div class='col-xs-12'>
@@ -116,7 +124,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container" style='display: none'>
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
@@ -147,10 +155,16 @@
 
       <hr>
 
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
-    </div> <!-- /container -->        
+    </div> <!-- /container -->     
+    <div class='container'>
+      <div class='row'>
+            <footer>
+          <p>&copy; Code for Asheville (and friends) 2014</p>
+        </footer>
+
+      </div>
+
+    </div>   
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
@@ -167,16 +181,6 @@
             e.src='http://www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-
-        <script type='text/javascript'>
-        console.log('PRC Test');
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position)    {
-              console.log(position);
-             });
-          }
-
         </script>
     </body>
 </html>
