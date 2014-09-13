@@ -26,11 +26,13 @@ myApp.controller('HomeController', function ($scope, $http) {
       success(function(data, status, headers, config) {
         console.log(data);
         $scope.future.avg_low = round(data[0].monthVals[$scope.opts.month]);
+        $scope.present.avg_low = round(data[0].monthVals[$scope.opts.month] - 3);
       });
     $http.get(url_max).
       success(function(data, status, headers, config) {
         console.log(data);
         $scope.future.avg_high = round(data[0].monthVals[$scope.opts.month]);
+        $scope.present.avg_high = round(data[0].monthVals[$scope.opts.month] - 3);
       });
   }
     
@@ -38,9 +40,6 @@ myApp.controller('HomeController', function ($scope, $http) {
     .bind("geocode:result", function(event, result){
       console.log(result);
       $scope.location = result;
-      
-      $scope.future.avg_high = 70;
-      $scope.future.avg_low = 60;
       $scope.$apply();
     })
   
