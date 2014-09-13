@@ -1,15 +1,14 @@
-var myApp = angular.module('spicyApp1', []);
+var myApp = angular.module('climate', []);
 
-myApp.controller('SpicyController', ['$scope', function($scope) {
-    $scope.spice = 'very';
-
-    $scope.chiliSpicy = function() {
-        $scope.spice = 'chili';
-    };
-
-    $scope.jalapenoSpicy = function() {
-        $scope.spice = 'jalapeño';
-    };
+myApp.controller('HomeController', ['$scope', function($scope) {
+  $scope.location = null;
+  
+  console.log("hi");
+  $(".user-address").geocomplete()
+    .bind("geocode:result", function(event, result){
+      console.log(result);
+      $scope.location = result;
+    })
 }]);
 
 
