@@ -53,6 +53,9 @@ body {
   min-height: 45px;
 }
 /*INFO DISPLAY STYLES*/
+.climate-content-header {
+  margin-top: 10px;
+}
 .climate-change-content {
   background: rgba(0, 0, 0, 0.3);
   margin-top: 20px;
@@ -74,20 +77,24 @@ body {
 }
 .temp-left {
   text-align: right;
+}
+.temp-left .degree-number {
   border-bottom: 5px solid red;
 }
 .temp-right {
   text-align: left;
+}
+.temp-right .degree-number {
   border-bottom: 5px solid blue;
 }
 /*RAINFALL DISPLAY*/
 .rainfall-container {
   text-align: center;
 }
-.rainfall-display { 
-  display: inline-block;
+.rainfall-display {
+  display: inline-block; 
   padding-left: 0px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .rainfall-display li {
   list-style-type: none;
