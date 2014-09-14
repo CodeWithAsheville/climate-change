@@ -142,7 +142,7 @@
     </div>   
     <div class='climate-change-content-window'>
       <!-- Start Present -->
-      <div class='container climate-change-content climate-change-content-present'>
+      <div class='container climate-change-content climate-change-content-present' ng-show="!showActions" ng-swipe-right="showActions = true" >
         <div class='row'>
           <div class="col-xs-12 text-center climate-content-header">
             Present AVG (1999 - Now)
@@ -173,7 +173,7 @@
       </div>
       <!-- End Present -->
       <!-- Start Future -->
-      <div class='container climate-change-content climate-change-content-future' style='display: none'>
+      <div class='container climate-change-content climate-change-content-future' ng-show="showActions" ng-swipe-left="showActions = false" >
           <div class='row'>
             <div class="col-xs-12 text-center climate-content-header">
               Future AVG ({{opts.future_start}} - {{opts.future_end}})
