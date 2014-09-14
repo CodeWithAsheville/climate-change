@@ -108,11 +108,14 @@ $(document).ready(function(){
 		jQuery(".next-arrow img, .prev-arrow img").css('margin-top', arrow_margin );
 	}
 
-	$(window).resize(function(){
+	jQuery(window).resize(function(){
 	      arrow_margins();
     });	
 
     arrow_margins();
 	
+	jQuery('.temp-formatter .btn').on('click', function(){
+		jQuery(this).siblings('.active').removeClass('active');
+	});
 
 });
