@@ -102,6 +102,17 @@ $(document).ready(function(){
 		});
 	});
 
-	jQuery(".climate-change-content").height());
+	function arrow_margins(){
+		climate_content_height = jQuery(".climate-change-content").height();
+		arrow_margin = (climate_content_height / 2) - (58/2);
+		jQuery(".next-arrow img, .prev-arrow img").css('margin-top', arrow_margin );
+	}
+
+	$(window).resize(function(){
+	      arrow_margins();
+    });	
+
+    arrow_margins();
+	
 
 });
