@@ -229,8 +229,7 @@
       <div class='container climate-change-content climate-change-content-present' ng-show="showPresent" ng-click="showPresent = false; load_json();" ng-swipe-left="showPresent = false" >
         <div class='row'>
           <div class="col-xs-12 text-center climate-content-header">
-            <span class="time-frame">Present AVG (1999 - Now): </span><br>
-            <span class='current_month'>{{opts.month_name}}</span><br>
+            <div class="time-frame"><h3>Present AVG</h3> <span>(1999 - Now) | </span><span class='current_month'>{{opts.month_name}}</span> </div>
             <span class="location-indicator"></span>
           </div>
           <div class='col-xs-6 temp-left'>
@@ -262,8 +261,7 @@
       <div class='container climate-change-content climate-change-content-future' ng-show="! showPresent" ng-click="showPresent = true" ng-swipe-right="showPresent = true" >
           <div class='row'>
             <div class="col-xs-12 text-center climate-content-header">
-              <span class='time-frame'>Future AVG ({{opts.future_start}} - {{opts.future_end}}): </span> <br>
-              <span class='current_month'>{{opts.month_name}}</span>
+              <div class='time-frame'><h3>Future AVG</h3> <span>({{opts.future_start}} - {{opts.future_end}}) | </span> <span class='current_month'>{{opts.month_name}}</span></div>
               <span class="location-indicator"></span>
             </div>
             <div class="prev-arrow"><img src="images/arrow-prev.png" alt="prev arrow"/></div>

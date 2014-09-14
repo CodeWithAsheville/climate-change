@@ -13,10 +13,10 @@ h3 {
 }
 body {
   background: url('../images/background.jpg');
-  background-attachment: fixed; 
+  background-attachment: fixed;
   background-position: center top;
   /*	div{
-		background: red !important;
+		background: red !important; 
 	}*/
 
 }
@@ -77,7 +77,7 @@ footer p {
   width: 50%;
 }
 .temp-formatter .btn.active {
-  border: 1px solid #DF6000;
+  border: 1px solid #df6000;
 }
 /*INFO DISPLAY STYLES*/
 .climate-content-header {
@@ -199,12 +199,22 @@ footer p {
   color: white;
 }
 .time-frame {
-  font-size: .8em;
+  /*font-size: .8em;*/
+
+  /*font-weight: bold;*/
+
+  /*color: #ccc;*/
+
+}
+.time-frame h3 {
+  font-weight: lighter;
 }
 .current_month {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #ccc;
+  font-weight: bold;
+  color: #df6000;
 }
 .slide-nav {
   text-align: center;
@@ -237,8 +247,8 @@ footer p {
 .info-nav a {
   padding-right: 10px;
   margin-left: 10px;
-  border-right: 1px solid #DF6000;
-  color: #DF6000;
+  border-right: 1px solid #df6000;
+  color: #df6000;
   letter-spacing: 1px;
   text-transform: uppercase;
 }

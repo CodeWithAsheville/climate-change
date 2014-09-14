@@ -88,18 +88,38 @@ myApp.filter('c_or_f', function() {
           });
       });
 
-      var citiesForCurentMonth = cities[$scope.opts.month];
+      console.log('Current month: ' + $scope.opts.month);
+      var citiesForCurentMonth = cities_us[$scope.opts.month];
+      var globalCitiesForCurentMonth = cities_global[$scope.opts.month];
 
       var weight = 1; 
       var minValue = 0;
+      var smallestSum = 1000000;
       $scope.similarCity = "";
 
       for(var propertyName in citiesForCurentMonth) {
-         var tmax = weight * abs($scope.future.avg_high - citiesForCurentMonth[propertyName].tmax);
-         var tmin = weight * abs($scope.future.avg_low - citiesForCurentMonth[propertyName].tmin);
-         var precip = weight * abs($scope.future.precip - citiesForCurentMonth[propertyName].tmax);
+         var tmax = weight * Math.abs($scope.future.avg_high - citiesForCurentMonth[propertyName].tmax);
+         var tmin = weight *  Math.abs($scope.future.avg_low - citiesForCurentMonth[propertyName].tmin);
+         var precip = weight *  Math.abs($scope.future.precip - citiesForCurentMonth[propertyName].tmax);
          var sum = tmax + tmin + precip;
-         if(sum > minValue){
+
+         if(sum < smallestSum){
+          smallestSum = sum;
+          $scope.similarCity = propertyName;
+         }
+      }
+
+      for(var propertyName in globalCitiesForCurentMonth) {
+         var tmax = weight * Math.abs($scope.future.avg_high - globalCitiesForCurentMonth[propertyName].tmax);
+         var tmin = weight *  Math.abs($scope.future.avg_low - globalCitiesForCurentMonth[propertyName].tmin);
+         var precip = 5 * weight *  Math.abs($scope.future.precip - globalCitiesForCurentMonth[propertyName].tmax);
+        
+         var sum = tmax + tmin + precip;
+
+         console.log('diff: ' + tmax);
+
+         if(sum < smallestSum){
+          smallestSum = sum;
           $scope.similarCity = propertyName;
          }
       }
