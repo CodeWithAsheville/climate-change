@@ -15,21 +15,21 @@ body {
   background: url('../images/background.jpg');
   background-attachment: fixed;
   background-position: center top;
-  /*	div{
-		background: red !important;
+  /*	div{ 
+		background: red !important; 
 	}*/
 
 }
 footer p {
   text-align: center;
   color: #777;
-  margin-top: 40px; 
+  margin-top: 40px;
   font-size: 12px;
 }
 .navbar {
   display: none;
 }
-/*PAGE HEAD STYLES*/
+/*PAGE HEAD STYLES*/ 
 .page-head-container {
   /*padding-bottom: 20px;*/
 
@@ -170,23 +170,25 @@ footer p {
   width: 40px;
   z-index: 100;
   cursor: pointer;
+  background-repeat: no-repeat;
 }
 .next-arrow img,
 .prev-arrow img {
   max-width: 90%;
   margin-top: 50%;
+  display: none;
 }
 .next-arrow:hover,
 .prev-arrow:hover {
-  background: black;
+  background-color: black;
 }
 .next-arrow {
   right: 0px;
-  background-image: url('images/arrow-next-back.png');
+  background-image: url('../images/arrow-next-back.png');
   background-position: center center;
 }
 .prev-arrow {
-  background-image: url('images/arrow-prev-back.png');
+  background-image: url('../images/arrow-prev-back.png');
   background-position: center center;
 }
 /*INFO PANE*/
