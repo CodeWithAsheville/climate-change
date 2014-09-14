@@ -33,6 +33,7 @@ footer p {
 .page-head-container {
   /*padding-bottom: 20px;*/
 
+  z-index: 200;
 }
 /*GEOLOCATION FORM STYLES*/
 .geo-location-form {
@@ -93,14 +94,14 @@ footer p {
     font-size: 1.3em;
   }
 }
-.degrees-text {
+.degrees-text { 
   clear: both;
   display: block;
 }
 .degree-number {
   font-size: 8em;
   font-weight: lighter;
-} 
+}
 @media screen and (max-width: 500px) {
   .degree-number {
     font-size: 6em;
@@ -154,7 +155,7 @@ footer p {
 
   text-align: center;
   width: 40px;
-  z-index: 9999;
+  z-index: 100;
   cursor: pointer;
 }
 .next-arrow img,
