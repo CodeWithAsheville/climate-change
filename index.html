@@ -229,7 +229,9 @@
       <div class='container climate-change-content climate-change-content-present' ng-show="showPresent" ng-click="showPresent = false; load_json();" ng-swipe-left="showPresent = false" >
         <div class='row'>
           <div class="col-xs-12 text-center climate-content-header">
-            Present AVG (1999 - Now) <span class='current_month'>{{opts.month_name}}</span>
+            <span class="time-frame">Present AVG (1999 - Now): </span>
+            <span class='current_month'>{{opts.month_name}}</span>
+            <span class="location-indicator"></span>
           </div>
           <div class='col-xs-6 temp-left'>
             <h2>Avg High</h2>
@@ -260,8 +262,9 @@
       <div class='container climate-change-content climate-change-content-future' ng-show="! showPresent" ng-click="showPresent = true" ng-swipe-right="showPresent = true" >
           <div class='row'>
             <div class="col-xs-12 text-center climate-content-header">
-              Future AVG ({{opts.future_start}} - {{opts.future_end}}) 
+              <span class='time-frame'>Future AVG ({{opts.future_start}} - {{opts.future_end}}): </span> 
               <span class='current_month'>{{opts.month_name}}</span>
+              <span class="location-indicator"></span>
             </div>
             <div class="prev-arrow"><img src="images/arrow-prev.png" alt="prev arrow"/></div>
             <div class='col-xs-6 temp-left'>
@@ -286,6 +289,9 @@
                 <h3>Avg Rainfall <img src="images/rain-drop-new.png" alt="raindrop icon"/></h3>
               </div>
             </div>
+          </div>
+          <div class='row'>
+            Feels like: <span>{{similar_city}} </span>
           </div>
         </div>
       <!-- End Future -->

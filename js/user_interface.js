@@ -101,4 +101,7 @@ $(document).ready(function(){
 			jQuery(".info-content-pane").slideUp();
 		});
 	});
+
+	jQuery(".climate-change-content").height());
+
 });
