@@ -7,6 +7,7 @@ myApp.controller('HomeController', function ($scope, $http) {
   $scope.future = { avg_high: null, avg_low: null, precip: null };
   $scope.showPresent = true;
   $scope.temp_format = 'c';
+  $scope.activeRegion = 5;
 
   $scope.opts = {
     future_start: 2046, 
@@ -95,7 +96,6 @@ myApp.controller('HomeController', function ($scope, $http) {
 
             if($scope.temp_format == 'f'){
               $scope.future.avg_high = round(($scope.future.avg_high * 1.8) + 32);
-
             }
           });
         
