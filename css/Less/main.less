@@ -1,5 +1,6 @@
 /*MAIN STYLES*/
 @main-color: #DF6000;
+@secondary-color: #72BF00;
 
 .page-title{
 	text-transform: uppercase;
@@ -216,6 +217,22 @@ footer p{
 	}
 }
 
+/*BOTTOM CONTENT PANE*/
+.info-content-pane-bottom{
+	margin-top: 20px;
+	background: rgba(0,0,0,0.3);
+	padding: 10px;
+	overflow:hidden;
+	color: white;
+	h2{
+		text-align:center;
+	}
+	>div{
+		/*max-width: 80%;*/
+		padding: 0px 20px 20px 20px;
+	}
+}
+
 .time-frame{
 	/*font-size: .8em;*/
 	/*font-weight: bold;*/
@@ -230,7 +247,13 @@ footer p{
 	text-transform: uppercase;
 	color: #ccc;
 	font-weight:bold;
-	color: @main-color;
+	color: @secondary-color;
+}
+
+.climate-change-content-future{
+	.current_month{
+		color: @main-color;
+	}
 }
 
 .slide-nav{
@@ -271,6 +294,15 @@ footer p{
 		&:last-child{
 			border-right: none;
 		}
+	}
+}
+
+.city-match{
+	margin: 20px inherit 20px inherit;
+	h3{
+		margin-top: 5px;
+		color: @main-color;
+		letter-spacing: 2px;
 	}
 }
 

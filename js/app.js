@@ -100,8 +100,12 @@ myApp.filter('c_or_f', function() {
       for(var propertyName in citiesForCurentMonth) {
          var tmax = weight * Math.abs($scope.future.avg_high - citiesForCurentMonth[propertyName].tmax);
          var tmin = weight *  Math.abs($scope.future.avg_low - citiesForCurentMonth[propertyName].tmin);
-         var precip = weight *  Math.abs($scope.future.precip - citiesForCurentMonth[propertyName].tmax);
+         var precip = 1 * weight *  Math.abs($scope.future.precip - citiesForCurentMonth[propertyName].pre);
          var sum = tmax + tmin + precip;
+         
+         console.log(propertyName + " : " + sum);
+         console.log('diff: ' + smallestSum + " < " + sum + " | " + $scope.similarCity);
+
 
          if(sum < smallestSum){
           smallestSum = sum;
@@ -112,13 +116,13 @@ myApp.filter('c_or_f', function() {
       for(var propertyName in globalCitiesForCurentMonth) {
          var tmax = weight * Math.abs($scope.future.avg_high - globalCitiesForCurentMonth[propertyName].tmax);
          var tmin = weight *  Math.abs($scope.future.avg_low - globalCitiesForCurentMonth[propertyName].tmin);
-         var precip = 5 * weight *  Math.abs($scope.future.precip - globalCitiesForCurentMonth[propertyName].tmax);
+         var precip = 1 * weight *  Math.abs($scope.future.precip - globalCitiesForCurentMonth[propertyName].pre);
         
          var sum = tmax + tmin + precip;
-
-         console.log('diff: ' + tmax);
-
+         console.log(propertyName + " : " + sum);
+         console.log('diff: ' + smallestSum + " < " + sum + " | " + $scope.similarCity);
          if(sum < smallestSum){
+          // console.log('update');
           smallestSum = sum;
           $scope.similarCity = propertyName;
          }
