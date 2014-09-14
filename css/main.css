@@ -92,13 +92,13 @@ footer p {
 @media screen and (max-width: 500px) {
   .climate-change-content h2 {
     font-size: 1.3em;
-  } 
+  }
 }
-.degrees-text { 
+.degrees-text {
   clear: both;
   display: block;
 }
-.degree-number {
+.degree-number { 
   font-size: 8em;
   font-weight: lighter;
 }
@@ -197,6 +197,30 @@ footer p {
 }
 .info-content-pane .close-pane:hover {
   color: white;
+}
+.slide-nav {
+  text-align: center;
+  margin-top: 10px;
+}
+.slide-nav img {
+  max-width: 15px;
+  margin: 0px 3px;
+  cursor: pointer;
+}
+.info-pane-2 {
+  clear: both;
+}
+.info-pane-2 .panel-heading,
+.info-pane-2 .panel {
+  background: transparent;
+  color: white;
+}
+.info-pane-2 .panel-heading h4 > a {
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+.info-pane-2 .panel {
+  border: none;
 }
 .info-nav {
   text-align: center;

@@ -105,6 +105,9 @@ myApp.controller('HomeController', function ($scope, $http) {
             $scope.future.avg_low = round($scope.present.avg_low + data[0].monthVals[$scope.opts.month]);
           });
       });
+
+      // PRC
+
     }
     
   $(".user-address").geocomplete()
@@ -119,6 +122,10 @@ myApp.controller('HomeController', function ($scope, $http) {
       
       $scope.$apply();
       $scope.load_json();
+
+      console.log('Checking regions');
+      
+      //$scope.activeRegion
     })
   
   $scope.load_json();
