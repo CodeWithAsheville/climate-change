@@ -165,7 +165,7 @@
                 </div>                
               </div>
               <p class="info-pane-3">
-                <b>"From awareness, comes action".</b><br>It’s our world: see how climate change affects our  future weather. Quickly get current averages and future weather  information for your location and any place in the world. Using data from the World Bank, see climate variables  such as temperature and precipitation broken down by monthly averages and climate model  projections. Get a glimpse of what your city may feel like in the  future. Then help combat climate change. Share and find out how to do  your part.   
+                <b>"From awareness, comes action".</b><br></br>It’s our world: see how climate change affects our  future weather. Quickly get current averages and future weather  information for your location and any place in the world. Using data from the World Bank, see climate variables  such as temperature and precipitation broken down by monthly averages and climate model  projections. Get a glimpse of what your city may feel like in the  future. Then help combat climate change. Share and find out how to do  your part.   
               </p>              
             </div>
           </div>
@@ -282,7 +282,7 @@
             </div>
           </div> -->
           <div class='row'>
-            <div class='col-xs-12 text-center city-match'>
+            <div class='col-xs-8 col-xs-offset-2 text-center city-match'>
               <span>The predicted temperature for your region in 2050 will feel like</span>
               <h3>{{similarCity}}</h3>
             </div>
@@ -306,98 +306,98 @@
           <div class='col-xs-12'>
             <div class="well info-content-pane-bottom">
               <h2>Regional Impact Notes</h2>
-              <div ng-show='activeRegion == 1'>
-                <h3>Northeast</h3>
+              <div ng-show="activeRegion == 'Northeast'">
+                <h3>Northeast US</h3>
                 <p>
                   “Heat waves, heavy downpours, and sea level rise pose growing challenges to many aspects of life in the Northeast. Infrastructure, agriculture, fisheries, and ecosystems will be increasingly compromised. Many states and cities are beginning to incorporate climate change into their planning.”
                 </p>
                 <a class="btn btn-primary" href="http://nca2014.globalchange.gov/highlights/regions/northeast">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 2'>
-                <h3>Southeast</h3>
+              <div ng-show="activeRegion == 'Southeast'">
+                <h3>Southeast US</h3>
                 <p>
                   “Sea level rise poses widespread and continuing threats to the region’s economy and environment. Extreme heat will affect health, energy, agriculture, and more. Decreased water availability will have economic and environmental impacts.”
                 </p>
                 <a class="btn btn-primary" href="http://nca2014.globalchange.gov/highlights/regions/southeast">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 3'>
-                <h3>Midwest</h3>
+              <div ng-show="activeRegion == 'Midwest'">
+                <h3>Midwest US</h3>
                 <p>
                   “Extreme heat, heavy downpours, and flooding will affect infrastructure, health, agriculture, forestry, transportation, air and water quality, and more. Climate change will also exacerbate a range of risks to the Great Lakes.”
                 </p>
                 <a class="btn btn-primary" href="http://nca2014.globalchange.gov/highlights/regions/midwest">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 4'>
+              <div ng-show="activeRegion == 'Great Plains'">
                 <h3>Great Plains</h3>
                 <p>
                   “Rising temperatures are leading to increased demand for water and energy. In parts of the region, this will constrain development, stress natural resources, and increase competition for water. New agricultural practices will be needed to cope with changing conditions.”
                 </p>
                 <a class="btn btn-primary" href="http://nca2014.globalchange.gov/highlights/regions/great-plains">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 5'>
-                <h3>Southwest</h3>
+              <div ng-show="activeRegion == 'Southwest'">
+                <h3>Southwest US</h3>
                 <p>
                   “Increased heat, drought, and insect outbreaks, all linked to climate change, have increased wildfires. Declining water supplies, reduced agricultural yields, health impacts in cities due to heat, and flooding and erosion in coastal areas are additional concerns.”
                 </p>
                 <a class="btn btn-primary" href="http://nca2014.globalchange.gov/highlights/regions/southwest">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 6'>
-                <h3>Northwest</h3>
+              <div ng-show="activeRegion == 'Northwest'">
+                <h3>Northwest US</h3>
                 <p>
                   “Changes in the timing of streamflow reduce water supplies for competing demands. Sea level rise, erosion, inundation, risks to infrastructure, and increasing ocean acidity pose major threats. Increasing wildfire, insect outbreaks, and tree diseases are causing widespread tree die-off.”
                 </p>
                 <a class="btn btn-primary" href="http://nca2014.globalchange.gov/highlights/regions/northwest">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 7'>
+              <div ng-show="activeRegion == 'Alaska'">
                 <h3>Alaska</h3>
                 <p>
                   “Alaska has warmed twice as fast as the rest of the nation, bringing widespread impacts. Sea ice is rapidly receding and glaciers are shrinking. Thawing permafrost is leading to more wildfire, and affecting infrastructure and wildlife habitat. Rising ocean temperatures and acidification will alter valuable marine fisheries.”
                 </p>
                 <a class="btn btn-primary" href="http://nca2014.globalchange.gov/highlights/regions/alaska">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 8'>
-                <h3>Hawaii</h3>
+              <div ng-show="activeRegion == 'Oceania'">
+                <h3>Oceania</h3>
                 <p>
                   “Warmer oceans are leading to increased coral bleaching and disease outbreaks and changing distribution of tuna fisheries. Freshwater supplies will become more limited on many islands. Coastal flooding and erosion will increase. Mounting threats to food and water security, infrastructure, health, and safety are expected to lead to increasing human migration.”
                 </p>
                 <a class="btn btn-primary" href="http://nca2014.globalchange.gov/highlights/regions/hawaii">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 9'>
+              <div ng-show="activeRegion == 'Africa'">
                 <h3>Africa</h3>
                 <p>
                   “Although the countries of Africa have some of the lowest overall and per capita global warming emissions on the planet, they are also likely to suffer from some of the worst consequences of climate change. These impacts may already be unfolding in the form of droughts, famine, desertification, and population displacement. In the context of high levels of poverty and malnutrition, the priority for many African countries is increasing access to energy services and improving the economic welfare of their people.”
                 </p>
                 <a class="btn btn-primary" href="http://www.climatehotmap.org/global-warming-solutions/africa.html">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 10'>
+              <div ng-show="activeRegion == 'Europe'">
                 <h3>Europe</h3>
                 <p>
                   “Climate change is happening now: temperatures are rising, rainfall patterns are shifting, glaciers and snow are melting, and the global mean sea level is rising. We expect that these changes will continue, and that extreme weather events resulting in hazards such as floods and droughts will become more frequent and intense. Impacts and vulnerabilities for nature, the economy and our health differ across regions, territories and economic sectors in Europe.”
                 </p>
                 <a class="btn btn-primary" href="http://www.eea.europa.eu/themes/climate">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 11'>
+              <div ng-show="activeRegion == 'Asia'"">
                 <h3>Asia</h3>
                 <p>
                   “People in coastal regions of Asia, particularly those living in cities, could face some of the worst effects of global warming, climate experts will warn this week. Hundreds of millions of people are likely to lose their homes as flooding, famine and rising sea levels sweep the region, one of the most vulnerable on Earth to the impact of global warming, the UN states.”
                 </p>
                 <a class="btn btn-primary" href="http://www.theguardian.com/environment/2014/mar/22/global-warming-hit-asia-hardest">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 12'>
+              <div ng-show="activeRegion == 'Australia'">
                 <h3>Australia</h3>
                 <p>
                   “Leading scientists advise climate change will cause increases to the frequency and intensity of extreme weather events. Rising sea levels pose a significant risk to coastal communities, while the world’s oceans could become too acidic to support coral reefs and other calcifying marine organisms.”
                 </p>
                 <a class="btn btn-primary" href="http://www.climatechange.gov.au/climate-change/climate-science/climate-change-impacts-australia">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 13'>
+              <div ng-show="activeRegion == 'Central/South America'">
                 <h3>Central/South America</h3>
                 <p>
                   “Changes in water availability due to climate change are leading us to more intense floods and droughts. Agriculture in the region will be impacted by climate change leading to increased uncertainty in food production and consequently food security. Sea level rise will affect the over 600 million people living on coastal areas in Latin America and the Caribbean.”
                 </p>
                 <a class="btn btn-primary" href="http://350.org/impacts-of-climate-change-in-latin-america-and-the-caribbean-5-things-you-need-to-know/">Read More...</a>
               </div>
-              <div ng-show='activeRegion == 14'>
+              <div ng-show="activeRegion == 'North America'">
                 <h3>North America</h3>
                 <p>
                   Insect infestations, forest fires, floods and drought reflect the devastating impact global warming is already having on the vast Canadian landscape, according to experts from all 10 provinces and two territories.

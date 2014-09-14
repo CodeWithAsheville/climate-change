@@ -78,6 +78,8 @@ myApp.filter('c_or_f', function() {
   }
   
   $scope.load_json = function(){
+    $scope.similarCity = "";
+    $scope.activeRegion = "";
     var url_start = "http://www.corsproxy.com/climatedataapi.worldbank.org/climateweb/rest/v1/basin/";
     var url_end = "/" + $scope.opts.future_start + "/" + $scope.opts.future_end + "/" + $scope.opts.basin_id + ".JSON";
     
@@ -124,7 +126,7 @@ myApp.filter('c_or_f', function() {
             for(var propertyName in citiesForCurentMonth) {
                var tmax = weight * Math.abs($scope.future.avg_high - citiesForCurentMonth[propertyName].tmax);
                var tmin = weight *  Math.abs($scope.future.avg_low - citiesForCurentMonth[propertyName].tmin);
-               var precip = 1 * weight *  Math.abs($scope.future.precip - citiesForCurentMonth[propertyName].pre);
+               var precip = 0 * weight *  Math.abs($scope.future.precip - citiesForCurentMonth[propertyName].pre);
                var sum = tmax + tmin + precip;
                
                console.log(propertyName + " : " + sum);
@@ -140,7 +142,7 @@ myApp.filter('c_or_f', function() {
             for(var propertyName in globalCitiesForCurentMonth) {
                var tmax = weight * Math.abs($scope.future.avg_high - globalCitiesForCurentMonth[propertyName].tmax);
                var tmin = weight *  Math.abs($scope.future.avg_low - globalCitiesForCurentMonth[propertyName].tmin);
-               var precip = 1 * weight *  Math.abs($scope.future.precip - globalCitiesForCurentMonth[propertyName].pre);
+               var precip = 0 * weight *  Math.abs($scope.future.precip - globalCitiesForCurentMonth[propertyName].pre);
               
                var sum = tmax + tmin + precip;
                console.log(propertyName + " : " + sum);
@@ -152,6 +154,12 @@ myApp.filter('c_or_f', function() {
                }
             }
 
+            console.log('Checking regions');
+            var lat_r = Math.round($scope.location.k);
+            var lng_r = Math.round($scope.location.B);
+
+            $scope.activeRegion = regions[lat_r][lng_r];
+            console.log('Active Region: '+ $scope.activeRegion);
           });
       });
 
@@ -175,7 +183,6 @@ myApp.filter('c_or_f', function() {
       $scope.$apply();
       $scope.load_json();
 
-      console.log('Checking regions');
       
       //$scope.activeRegion
     })

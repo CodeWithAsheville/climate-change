@@ -212,12 +212,19 @@ footer p{
 	display:none;
 	overflow:hidden;
 	/*height: 250px;*/
-	p{
+	.info-content{
+		float:left;
+		width: 90%;
+	}
+	.info-header{
+		float:right;
+		display:inline-block;
+	}
+	p, .info-content > div{
 		display:none;
 		color:white;
 		margin-left: 15px;
 		margin-top: 15px;
-		width: 80%;
 		display:block;
 	}
 	.close-pane{
@@ -314,7 +321,7 @@ footer p{
 }
 
 .city-match{
-	margin: 20px inherit 20px inherit;
+	margin-top: 20px;
 	h3{
 		margin-top: 5px;
 		color: @main-color;
