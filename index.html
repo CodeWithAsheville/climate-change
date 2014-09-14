@@ -64,7 +64,7 @@
         <div class="info-container">
           <div class="info-nav">
             <a href="#" class="info-link-1">How to use</a>
-            <a href="#" class="info-link-2">How to get involved</a>
+            <a href="#" class="info-link-2">Do your Part</a>
             <a href="#" class="info-link-3">About this project</a>
           </div>
           <div class="info-content-pane well">
@@ -74,7 +74,7 @@
             <div class="info-content">
               <p class="info-pane-1">
                 <b>Look into your Forecast Future</b><br></br>
-                Enter your location in the search field below. Then look below to see the current temperature. Navigate right to view the projected temperature from 50 years from now.
+                By entering your location in the search below, we can see its current average minimum and maximum temperature based on data collected from 1999 to present. By moving left, a forecast average high and low temperature is displayed, along with a comparative "sister city" whose current climate you may soon be seeing given current trends.
               </p>
               <div class="info-pane-2">
                 <div class="panel-group" id="accordion">
@@ -165,15 +165,7 @@
                 </div>                
               </div>
               <p class="info-pane-3">
-                <b>Forecast 2050: "Your Weather Report from the Future"</b><br></br>
-                From Awareness, Comes Action.
-
-                It’s our world: see how climate change affects our future weather.
-
-                Quickly get current averages and future weather information for your location and any place in the world.
-
-                Using data from the World Bank, see climate variables such as temperature and precipitation
-                broken down by monthly averages and climate model projections. Get a glimpse of what your city may feel like in the future. Then help combat climate change. Share and find out how to do your part.
+                <b>"From awareness, comes action".</b><br>It’s our world: see how climate change affects our  future weather. Quickly get current averages and future weather  information for your location and any place in the world. Using data from the World Bank, see climate variables  such as temperature and precipitation broken down by monthly averages and climate model  projections. Get a glimpse of what your city may feel like in the  future. Then help combat climate change. Share and find out how to do  your part.   
               </p>              
             </div>
           </div>
@@ -183,6 +175,7 @@
         <div class="geo-location-form row">
           <div class="col-xs-9 col-sm-6 col-sm-offset-2">
             <input class='user-address form-control' type='text' value='' placeholder='Enter your address or ZIP' />
+            <span class="current-location" ng-show='using_current_location'>Using Current Location</span>
           </div>
           <div class="col-xs-3 col-sm-2">
             <a class="btn btn-primary" id='geocode-button' role="button"><img src="images/location-icon.png" alt="location icon"/></a>
@@ -226,10 +219,10 @@
     </div>   
     <div class='climate-change-content-window'>
       <!-- Start Present -->
-      <div class='container climate-change-content climate-change-content-present' ng-show="showPresent" ng-click="showPresent = false; load_json();" ngClass="climate-content-transition" ng-swipe-left="showPresent = false" >
+      <div class='container climate-change-content climate-change-content-present' ng-show="showPresent" ng-click="showPresent = false; load_json();" ng-swipe-left="showPresent = false" >
         <div class='row'>
           <div class="col-xs-12 text-center climate-content-header">
-            <div class="time-frame"><h3>Present AVG</h3> <span>(1999 - Now) | </span><span class='current_month'>{{opts.month_name}}</span> </div>
+            <div class="time-frame"><h3>Present Average</h3> <span>(1999 - Now) | </span><span class='current_month'>{{opts.month_name}}</span> </div>
             <span class="location-indicator"></span>
           </div>
           <div class='col-xs-6 temp-left'>
@@ -261,7 +254,7 @@
       <div class='container climate-change-content climate-change-content-future' ng-show="! showPresent" ng-click="showPresent = true" ng-swipe-right="showPresent = true" >
           <div class='row'>
             <div class="col-xs-12 text-center climate-content-header">
-              <div class='time-frame'><h3>Future AVG</h3> <span>({{opts.future_start}} - {{opts.future_end}}) | </span> <span class='current_month'>{{opts.month_name}}</span></div>
+              <div class='time-frame'><h3>Future Average</h3> <span>({{opts.future_start}} - {{opts.future_end}}) | </span> <span class='current_month'>{{opts.month_name}}</span></div>
               <span class="location-indicator"></span>
             </div>
             <div class="prev-arrow"><img src="images/arrow-prev.png" alt="prev arrow"/></div>
@@ -290,7 +283,7 @@
           </div> -->
           <div class='row'>
             <div class='col-xs-12 text-center city-match'>
-              <span>The predicted temperature for your region in 50 years will feel like</span>
+              <span>The predicted temperature for your region in 2050 will feel like</span>
               <h3>{{similarCity}}</h3>
             </div>
           </div>

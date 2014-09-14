@@ -106,14 +106,14 @@ $(document).ready(function(){
 		climate_content_height = jQuery(".climate-change-content").height();
 		arrow_margin = (climate_content_height / 2) - (58/2);
 		jQuery(".next-arrow img, .prev-arrow img").css('margin-top', arrow_margin );
+		console.log(arrow_margin);
+		console.log(climate_content_height);
 	}
 
 	jQuery(window).resize(function(){
 	    arrow_margins();
     });	
-    jQuery('.next-arrow, .prev-arrow').on('click', function(){
-    	arrow_margins();
-    });
+
 
     arrow_margins();
 	

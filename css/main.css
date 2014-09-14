@@ -15,7 +15,7 @@ body {
   background: url('../images/background.jpg');
   background-attachment: fixed;
   background-position: center top;
-  /*	div{ 
+  /*	div{
 		background: red !important;
 	}*/
 
@@ -34,8 +34,11 @@ footer p {
   /*padding-bottom: 20px;*/
 
   z-index: 200;
-}
+} 
 /*GEOLOCATION FORM STYLES*/
+.current-location {
+  color: #72bf00;
+}
 .geo-location-form {
   margin-bottom: 20px;
 }
@@ -80,6 +83,16 @@ footer p {
   border: 1px solid #df6000;
 }
 /*INFO DISPLAY STYLES*/
+/*TRANSITIONS*/
+.climate-content-transition-enter,
+.climate-content-transition-leave {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+}
 .climate-content-header {
   margin-top: 10px;
 }
