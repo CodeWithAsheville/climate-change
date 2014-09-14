@@ -17,7 +17,9 @@ $(document).ready(function(){
 
 
 	jQuery(".info-link-1").on('click', function(){
-		jQuery(".info-content-pane, .info-pane-1").slideDown();
+		jQuery(".info-content-pane").slideDown(function(){
+			jQuery(".info-pane-1").slideDown();
+		});
 		jQuery(".info-pane-2, .info-pane-3").slideUp();
 	});
 	jQuery(".info-link-2").on('click', function(){
