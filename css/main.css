@@ -14,13 +14,14 @@ h3 {
 body {
   background: url('../images/background.jpg');
   background-attachment: fixed;
+  background-position: center top;
   /*	div{
 		background: red !important;
 	}*/
 
 }
 .navbar {
-  display: none;
+  display: none; 
 }
 /*PAGE HEAD STYLES*/
 .page-head-container {
@@ -41,7 +42,7 @@ body {
   font-size: 14px;
   text-align: center;
   padding-top: 6px;
-  padding-bottom: 6px; 
+  padding-bottom: 6px;
 }
 #geocode-button img {
   max-height: 30px;
@@ -62,6 +63,11 @@ body {
   color: white;
   position: relative;
 }
+@media screen and (max-width: 500px) {
+  .climate-change-content h2 {
+    font-size: 1.3em;
+  }
+}
 .degrees-text {
   clear: both;
   display: block;
@@ -73,6 +79,11 @@ body {
 @media screen and (max-width: 500px) {
   .degree-number {
     font-size: 6em;
+  }
+}
+@media screen and (max-width: 320px) {
+  .degree-number {
+    font-size: 4em !important;
   }
 }
 .temp-left {
@@ -91,6 +102,11 @@ body {
 .rainfall-container {
   text-align: center;
 }
+.rainfall-container img {
+  max-width: 15px;
+  vertical-align: top;
+  margin-top: 5px;
+}
 .rainfall-display {
   display: inline-block;
   padding-left: 0px;
@@ -101,9 +117,6 @@ body {
   display: inline-block;
   float: left;
   margin-right: 10px;
-}
-.rainfall-display li img {
-  max-width: 30px;
 }
 /*NAVIGATION*/
 .next-arrow,
@@ -143,6 +156,8 @@ body {
   color: white;
   margin-left: 15px;
   margin-top: 15px;
+  max-width: 90%;
+  display: block;
 }
 .info-content-pane .close-pane {
   color: #ccc;
