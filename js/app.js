@@ -88,6 +88,22 @@ myApp.filter('c_or_f', function() {
           });
       });
 
+      var citiesForCurentMonth = cities[$scope.opts.month];
+
+      var weight = 1; 
+      var minValue = 0;
+      $scope.similarCity = "";
+
+      for(var propertyName in citiesForCurentMonth) {
+         var tmax = weight * abs($scope.future.avg_high - citiesForCurentMonth[propertyName].tmax);
+         var tmin = weight * abs($scope.future.avg_low - citiesForCurentMonth[propertyName].tmin);
+         var precip = weight * abs($scope.future.precip - citiesForCurentMonth[propertyName].tmax);
+         var sum = tmax + tmin + precip;
+         if(sum > minValue){
+          $scope.similarCity = propertyName;
+         }
+      }
+
       // PRC
 
     }
@@ -109,7 +125,8 @@ myApp.filter('c_or_f', function() {
       
       //$scope.activeRegion
     })
-  
+    
+      
   $scope.load_json();
 });
 
