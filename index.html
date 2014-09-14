@@ -118,7 +118,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                          Collapsible Group Item #2
+                          Use Less Energy and Live Healthier
                         </a>
                       </h4>
                     </div>
@@ -142,13 +142,23 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                          Collapsible Group Item #3
+                          Reduce Your Environmental Footprint and Save Money
                         </a>
                       </h4>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
                       <div class="panel-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        <ul>
+                          <li>
+                            Buy minimally packaged goods.
+                          </li>
+                          <li>
+                            Reuse, mend, and repurpose things.
+                          </li>
+                          <li>
+                            Print double-sided or not at all.
+                          </li>                                                          
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -196,12 +206,8 @@
             </select> -->
             <div class='col-xs-12 col-sm-8 col-sm-offset-2 temp-formatter'>
               <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-default active">
-                  <input ng-model='opts.temp_format' ng-click='load_json()' type="radio" name="options" id="option1" value='c' checked> Celsius &deg;
-                </label>
-                <label class="btn btn-default">
-                  <input ng-model='opts.temp_format' ng-click='load_json()' type="radio" name="options" id="option2" value='f' > Fahrenheit &deg;
-                </label>
+                <label class="btn btn-default active" ng-click="temp_unit_change('c')"> Celsius  &deg;</label>
+                <label class="btn btn-default" ng-click="temp_unit_change('f')"> Fahrenheit &deg;</label>
               </div>
             </div>             
           </div>
@@ -228,15 +234,15 @@
           <div class='col-xs-6 temp-left'>
             <h2>Avg High</h2>
             <p class='degree-display'>
-            <span class="degree-number">{{ present.avg_high | number: 0 }}&deg; </span> 
-              <span class="degrees-text">Celsius</span>
+              <span class="degree-number">{{ present.avg_high | c_or_f:temp_format }}&deg; </span> 
+              <span class="degrees-text">{{ temp_word }}</span>
             </p>
           </div>
           <div class='col-xs-6 temp-right'>
             <h2>Avg Low</h2>
             <p class='degree-display'>
-            <span class="degree-number">{{ present.avg_low | number: 0 }}&deg; </span> 
-              <span class="degrees-text">Celsius</span>
+              <span class="degree-number">{{ present.avg_low | c_or_f:temp_format }}&deg; </span> 
+              <span class="degrees-text">{{ temp_word }}</span>
             </p>
           </div>
           <div class="next-arrow"><img src="images/arrow-next.png" alt="next arrow"/></div>
@@ -261,15 +267,15 @@
             <div class='col-xs-6 temp-left'>
               <h2>Avg High</h2>
               <p class='degree-display'>
-                <span class="degree-number">{{ future.avg_high | number: 0 }}&deg; </span> 
-                <span class="degrees-text">Celsius</span>
+                <span class="degree-number">{{ future.avg_high | c_or_f:temp_format }}&deg; </span> 
+                <span class="degrees-text">{{ temp_word }}</span>
               </p>
             </div>
             <div class='col-xs-6 temp-right'>
               <h2>Avg Low</h2>
               <p class='degree-display'>
-                <span class="degree-number">{{ future.avg_low | number: 0 }}&deg; </span> 
-                <span class="degrees-text">Celsius</span>
+                <span class="degree-number">{{ future.avg_low | c_or_f:temp_format }}&deg; </span> 
+                <span class="degrees-text">{{ temp_word }}</span>
               </p>
             </div>
             <!-- <div class="next-arrow col-xs-1"><img src="images/arrow-next.png" alt="next arrow"/></div> -->
