@@ -14,7 +14,8 @@ myApp.filter('c_or_f', function() {
   $scope.showPresent = true;
   $scope.temp_format = 'c';
   $scope.temp_word = 'Celsius';
-  
+  $scope.activeRegion = 5;
+
   $scope.opts = {
     future_start: 2046, 
     future_end: 2065, 
@@ -108,7 +109,6 @@ myApp.filter('c_or_f', function() {
 
             if($scope.temp_format == 'f'){
               $scope.future.avg_high = round(($scope.future.avg_high * 1.8) + 32);
-
             }
           });
         
