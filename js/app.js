@@ -1,13 +1,20 @@
 var myApp = angular.module('climate', []);
 
-myApp.controller('HomeController', function ($scope, $http) {
+myApp.filter('c_or_f', function() {
+  return function(temp, temp_format) {
+    console.log('zomgz: ' + temp_format);
+    return Math.round(temp_format == 'f' ? (temp * 1.8) + 32 : temp)
+  };
+})
+  .controller('HomeController', function ($scope, $http) {
   $scope.location = {B: -82.65639099999999, k: 35.544517};
   $scope.past = { avg_high: null, avg_low: null };
   $scope.present = { avg_high: null, avg_low: null };
   $scope.future = { avg_high: null, avg_low: null, precip: null };
   $scope.showPresent = true;
   $scope.temp_format = 'c';
-
+  $scope.temp_word = 'Celsius';
+  
   $scope.opts = {
     future_start: 2046, 
     future_end: 2065, 
@@ -37,8 +44,10 @@ myApp.controller('HomeController', function ($scope, $http) {
   $scope.opts.month_name = $scope.months[$scope.opts.month];
   /* End PRC Added */
   
-  round = function(n){
-    return Math.round(n * 100) / 100;
+  $scope.temp_unit_change = function(val){
+    $scope.temp_format = val;
+    $scope.temp_word = val == 'f' ? "Fahrenheit" : "Celsius"
+    console.log("set to " + val + " : " + $scope.temp_format + " | " + $scope.temp_word);
   }
   
   $scope.load_json = function(){
@@ -51,6 +60,10 @@ myApp.controller('HomeController', function ($scope, $http) {
     var url_amin = url_start + "manom/ensemble/a2/50/tmin_means" + url_end;
     var url_amax = url_start + "manom/ensemble/a2/50/tmax_means" + url_end;
     var url_wund = "http://www.corsproxy.com/api.wunderground.com/api/fcb068a143892194/almanac/q/" + $scope.location.k + "," + $scope.location.B + ".json";
+    
+    // $scope.future.avg_high = function(){
+    //   temp_format == 'f' ? avg_high_c : (avg_high_c + 32) * 1.8
+    // }
     
     // $http.get(url_min).
     //   success(function(data, status, headers, config) {
