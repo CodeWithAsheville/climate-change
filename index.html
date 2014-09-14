@@ -94,10 +94,10 @@
        <!-- END INFORMATION LINKS -->      
         <h1 class='page-title'><img src="images/logo-2050.png" alt="logo" /></h1>
         <div class="geo-location-form row">
-          <div class="col-xs-9">
+          <div class="col-xs-9 col-sm-6 col-sm-offset-2">
             <input class='user-address form-control' type='text' value='' placeholder='Enter your address or ZIP' />
           </div>
-          <div class="col-xs-3">
+          <div class="col-xs-3 col-sm-2">
             <a class="btn btn-primary" id='geocode-button' role="button"><img src="images/location-icon.png" alt="location icon"/></a>
           </div>
         </div>
@@ -117,13 +117,13 @@
               <option value='11'>November</option>
               <option value='12'>December</option>
             </select> -->
-            <div class='col-xs-12 col-sm-6 temp-formatter'>
+            <div class='col-xs-12 col-sm-8 col-sm-offset-2 temp-formatter'>
               <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-default active">
-                  <input type="radio" name="options" id="option1" checked> Celsius &deg;
+                  <input ng-model='opts.temp_format' ng-click='load_json()' type="radio" name="options" id="option1" value='c' checked> Celsius &deg;
                 </label>
                 <label class="btn btn-default">
-                  <input type="radio" name="options" id="option2"> Fahrenheit &deg;
+                  <input ng-model='opts.temp_format' ng-click='load_json()' type="radio" name="options" id="option2" value='f' > Fahrenheit &deg;
                 </label>
               </div>
             </div>             
@@ -143,7 +143,7 @@
     </div>   
     <div class='climate-change-content-window'>
       <!-- Start Present -->
-      <div class='container climate-change-content climate-change-content-present' ng-show="showPresent" ng-click="showPresent = false" ng-swipe-left="showPresent = false" >
+      <div class='container climate-change-content climate-change-content-present' ng-show="showPresent" ng-click="showPresent = false; load_json();" ng-swipe-left="showPresent = false" >
         <div class='row'>
           <div class="col-xs-12 text-center climate-content-header">
             Present AVG (1999 - Now) <span class='current_month'>{{opts.month_name}}</span>

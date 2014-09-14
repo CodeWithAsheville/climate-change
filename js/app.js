@@ -6,6 +6,7 @@ myApp.controller('HomeController', function ($scope, $http) {
   $scope.present = { avg_high: null, avg_low: null };
   $scope.future = { avg_high: null, avg_low: null, precip: null };
   $scope.showPresent = true;
+  $scope.temp_format = 'c';
 
   $scope.opts = {
     future_start: 2046, 
@@ -91,6 +92,11 @@ myApp.controller('HomeController', function ($scope, $http) {
           success(function(data, status, headers, config) {
             console.log(data);
             $scope.future.avg_high = round($scope.present.avg_high + data[0].monthVals[$scope.opts.month]);
+
+            if($scope.temp_format == 'f'){
+              $scope.future.avg_high = round(($scope.future.avg_high * 1.8) + 32);
+
+            }
           });
         
         $http.get(url_amin).
