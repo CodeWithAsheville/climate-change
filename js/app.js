@@ -2,7 +2,6 @@ var myApp = angular.module('climate', []);
 
 myApp.filter('c_or_f', function() {
   return function(temp, temp_format) {
-    console.log('zomgz: ' + temp_format);
     return Math.round(temp_format == 'f' ? (temp * 1.8) + 32 : temp)
   };
 })
@@ -40,6 +39,9 @@ myApp.filter('c_or_f', function() {
     12: 'December'
   };
 
+  round = function(n){
+    return Math.round(n * 100) / 100;
+  }
   var d = new Date();
   $scope.opts.month = d.getMonth() + 1;
   $scope.opts.month_name = $scope.months[$scope.opts.month];
@@ -48,7 +50,6 @@ myApp.filter('c_or_f', function() {
   $scope.temp_unit_change = function(val){
     $scope.temp_format = val;
     $scope.temp_word = val == 'f' ? "Fahrenheit" : "Celsius"
-    console.log("set to " + val + " : " + $scope.temp_format + " | " + $scope.temp_word);
   }
   
   $scope.load_json = function(){
@@ -62,42 +63,14 @@ myApp.filter('c_or_f', function() {
     var url_amax = url_start + "manom/ensemble/a2/50/tmax_means" + url_end;
     var url_wund = "http://www.corsproxy.com/api.wunderground.com/api/fcb068a143892194/almanac/q/" + $scope.location.k + "," + $scope.location.B + ".json";
     
-    // $scope.future.avg_high = function(){
-    //   temp_format == 'f' ? avg_high_c : (avg_high_c + 32) * 1.8
-    // }
-    
-    // $http.get(url_min).
-    //   success(function(data, status, headers, config) {
-    //     console.log(data);
-    //     $scope.future.avg_low = round(data[0].monthVals[$scope.opts.month]);
-    //     // $scope.present.avg_low = round(data[0].monthVals[$scope.opts.month] - 3);
-    //     $http.get(url_amax).
-    //       success(function(data, status, headers, config) {
-    //         console.log(data);
-    //         $scope.past.avg_high = round($scope.future.avg_high - data[0].monthVals[$scope.opts.month]);
-    //       });
-    //   });
-    // $http.get(url_max).
-    //   success(function(data, status, headers, config) {
-    //     console.log(data);
-    //     $scope.future.avg_high = round(data[0].monthVals[$scope.opts.month]);
-    //     // $scope.present.avg_high = round(data[0].monthVals[$scope.opts.month] - 3);
-    //     $http.get(url_amin).
-    //       success(function(data, status, headers, config) {
-    //         console.log(data);
-    //         $scope.past.avg_low = round($scope.future.avg_low - data[0].monthVals[$scope.opts.month]);
-    //       });
-    //   });
-    // 
     $http.get(url_pre).
       success(function(data, status, headers, config) {
         console.log(data);
-        $scope.future.precip = round(data[0].monthVals[$scope.opts.month]);
+        $scope.future.precip = data[0].monthVals[$scope.opts.month];
       });
     
     $http.get(url_wund).
       success(function(data, status, headers, config) {
-        console.log("wund");
         console.log(data);
         $scope.present.avg_high = parseInt(data.almanac.temp_high.normal.C);
         $scope.present.avg_low = parseInt(data.almanac.temp_low.normal.C);
@@ -105,17 +78,13 @@ myApp.filter('c_or_f', function() {
         $http.get(url_amax).
           success(function(data, status, headers, config) {
             console.log(data);
-            $scope.future.avg_high = round($scope.present.avg_high + data[0].monthVals[$scope.opts.month]);
-
-            if($scope.temp_format == 'f'){
-              $scope.future.avg_high = round(($scope.future.avg_high * 1.8) + 32);
-            }
+            $scope.future.avg_high = $scope.present.avg_high + data[0].monthVals[$scope.opts.month];
           });
         
         $http.get(url_amin).
           success(function(data, status, headers, config) {
             console.log(data);
-            $scope.future.avg_low = round($scope.present.avg_low + data[0].monthVals[$scope.opts.month]);
+            $scope.future.avg_low = $scope.present.avg_low + data[0].monthVals[$scope.opts.month];
           });
       });
 
