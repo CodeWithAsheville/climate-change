@@ -6,14 +6,35 @@ myApp.controller('HomeController', function ($scope, $http) {
   $scope.present = { avg_high: null, avg_low: null };
   $scope.future = { avg_high: null, avg_low: null, precip: null };
   $scope.showPresent = true;
-  $scope.showFuture = false;
 
   $scope.opts = {
     future_start: 2046, 
     future_end: 2065, 
     basin_id: 352,
-    month: 1,
+    month: 9,
+    month_name: 'September'
   };
+
+  /* PRC Added */
+  $scope.months = {
+    1: 'January',
+    2: 'February', 
+    3: 'March',
+    4: 'April',
+    5: 'May',
+    6: 'June',
+    7: 'July',
+    8: 'August',
+    9: 'September',
+    10: 'October',
+    11: 'November',
+    12: 'December'
+  };
+
+  var d = new Date();
+  $scope.opts.month = d.getMonth() + 1;
+  $scope.opts.month_name = $scope.months[$scope.opts.month];
+  /* End PRC Added */
   
   round = function(n){
     return Math.round(n * 100) / 100;
