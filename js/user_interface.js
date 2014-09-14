@@ -109,8 +109,11 @@ $(document).ready(function(){
 	}
 
 	jQuery(window).resize(function(){
-	      arrow_margins();
+	    arrow_margins();
     });	
+    jQuery('.next-arrow, .prev-arrow').on('click', function(){
+    	arrow_margins();
+    });
 
     arrow_margins();
 	
