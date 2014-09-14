@@ -25,6 +25,7 @@
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/angular.min.js"></script>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body ng-controller="HomeController">
         <!--[if lt IE 7]>
@@ -58,6 +59,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="page-head-container">
       <div class="container">
+        <i class="fa fa-camera-retro"></i> fa-camera-retro
         <!-- INFORMATION LINKS -->
         <div class="info-container">
           <div class="info-nav">
@@ -249,6 +251,16 @@
           </div>
       </div>
       <!-- End Future -->
+      <div class='row'>
+        <div ng-show="showPresent" ng-click="showPresent = ! showPresent">
+           <img src="images/slide-nav-selected.png" alt="logo" />
+           <img src="images/slide-nav-unselected.png" alt="logo" />
+        </div>
+        <div ng-show="! showPresent" ng-click="showPresent = ! showPresent">
+           <img src="images/slide-nav-unselected.png" alt="logo" />
+           <img src="images/slide-nav-selected.png" alt="logo" />
+        </div>
+      </div>
     </div> <!-- /end window -->
     </div> <!-- /container -->     
     <div class='container'>
