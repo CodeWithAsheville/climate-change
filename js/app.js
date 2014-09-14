@@ -96,9 +96,22 @@ myApp.controller('HomeController', function ($scope, $http) {
 });
 
 
-console.log('PRC Test');
-if (navigator.geolocation) {
-navigator.geolocation.getCurrentPosition(function(position)    {
-  console.log(position);
- });
-}
+// if (navigator.geolocation) {
+//   navigator.geolocation.getCurrentPosition(function(position)    {
+//       new_pos_obj = { k : position.coords.latitude,
+//                       B : position.coords.longitude,
+//                     };
+
+//       $scope.location = new_pos_obj;
+      
+//       var lat_r = Math.round($scope.location.k);
+//       var lng_r = Math.round($scope.location.B);
+
+//       console.log("lat: " + lat_r + " lng: " + lng_r);
+//       $scope.opts.basin_id = basin[String(lat_r)][String(lng_r)];
+      
+//       $scope.$apply();
+//       $scope.load_json();
+
+//  });
+// }
