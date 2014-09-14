@@ -76,22 +76,29 @@ $(document).ready(function(){
 
 
 	jQuery(".info-link-1").on('click', function(){
-		jQuery(".info-pane-2, .info-pane-3").hide(function(){
-			jQuery(".info-content-pane").slideDown(function(){
+		jQuery(".info-pane-2, .info-pane-3").slideUp(function(){
+			jQuery(".info-content-pane, .close-pane").fadeIn('slow',function(){
 				jQuery(".info-pane-1").slideDown();
 			});			
 		});	
 	});
 	jQuery(".info-link-2").on('click', function(){
-		jQuery(".info-content-pane, .info-pane-2").slideDown();
-		jQuery(".info-pane-1, .info-pane-3").slideUp();
+		jQuery(".info-pane-1, .info-pane-3").slideUp(function(){
+			jQuery(".info-content-pane, .close-pane").fadeIn('slow', function(){
+				jQuery(".info-pane-2").slideDown();
+			});			
+		});
 	});	
 	jQuery(".info-link-3").on('click', function(){
-		jQuery(".info-content-pane, .info-pane-3").slideDown();
-		jQuery(".info-pane-1, .info-pane-2").slideUp();
+		jQuery(".info-pane-1, .info-pane-2").slideUp(function(){
+			jQuery(".info-content-pane, .close-pane").fadeIn('slow', function(){
+				jQuery(".info-pane-3").slideDown();
+			});			
+		});
 	});	
 	jQuery(".info-content-header .close-pane").on('click', function(){
-		jQuery(".info-content-pane, .info-pane-1, .info-pane-2").slideUp();
-		console.log('hi');
+		jQuery('.info-pane-1, .info-pane-2, .info-pane-3, .close-pane').fadeOut('slow', function(){
+			jQuery(".info-content-pane").slideUp();
+		});
 	});
 });
