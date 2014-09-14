@@ -5,7 +5,9 @@ myApp.controller('HomeController', function ($scope, $http) {
   $scope.past = { avg_high: null, avg_low: null };
   $scope.present = { avg_high: null, avg_low: null };
   $scope.future = { avg_high: null, avg_low: null, precip: null };
-  
+  $scope.showPresent = true;
+  $scope.showFuture = false;
+
   $scope.opts = {
     future_start: 2046, 
     future_end: 2065, 

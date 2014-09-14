@@ -20,12 +20,19 @@ body {
 	}*/
 
 }
+footer p {
+  text-align: center;
+  color: #777;
+  margin-top: 40px;
+  font-size: 12px;
+}
 .navbar {
-  display: none; 
+  display: none;
 }
 /*PAGE HEAD STYLES*/
 .page-head-container {
-  padding-bottom: 20px;
+  /*padding-bottom: 20px;*/
+
 }
 /*GEOLOCATION FORM STYLES*/
 .geo-location-form {
@@ -44,6 +51,12 @@ body {
   padding-top: 6px;
   padding-bottom: 6px;
 }
+@media screen and (max-width: 500px) {
+  #geocode-button {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 #geocode-button img {
   max-height: 30px;
 }
@@ -52,6 +65,18 @@ body {
   width: 100%;
   padding: 10px;
   min-height: 45px;
+}
+.month-selection {
+  margin-bottom: 20px;
+}
+.temp-formatter .btn-group {
+  width: 100%;
+}
+.temp-formatter .btn {
+  width: 50%;
+}
+.temp-formatter .btn.active {
+  border: 1px solid #DF6000;
 }
 /*INFO DISPLAY STYLES*/
 .climate-content-header {
@@ -75,7 +100,7 @@ body {
 .degree-number {
   font-size: 8em;
   font-weight: lighter;
-}
+} 
 @media screen and (max-width: 500px) {
   .degree-number {
     font-size: 6em;
@@ -149,14 +174,16 @@ body {
   background: rgba(0, 0, 0, 0.3);
   padding: 10px;
   display: none;
-  min-height: 200px;
+  overflow: hidden;
+  /*height: 250px;*/
+
 }
 .info-content-pane p {
   display: none;
   color: white;
   margin-left: 15px;
   margin-top: 15px;
-  max-width: 90%;
+  width: 80%;
   display: block;
 }
 .info-content-pane .close-pane {

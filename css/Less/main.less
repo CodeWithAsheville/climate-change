@@ -36,6 +36,7 @@ footer p{
 /*PAGE HEAD STYLES*/
 .page-head-container{
 	/*padding-bottom: 20px;*/
+	z-index:200;
 }
 
 
@@ -55,6 +56,10 @@ footer p{
 	text-align: center;
 	padding-top: 6px;
 	padding-bottom: 6px;
+	@media screen and (max-width: 500px) {
+	    padding-left:0px;
+	    padding-right:0px;
+	}	
 	img{
 		max-height: 30px;
 	}
@@ -163,7 +168,7 @@ footer p{
 	/*padding-top: 25%;*/
 	text-align: center;
 	width: 40px;
-	z-index:9999;
+	z-index:100;
 	cursor:pointer;
 	img{
 		max-width: 90%;

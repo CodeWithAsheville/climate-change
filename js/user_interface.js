@@ -34,10 +34,10 @@ function incrementTemperatureAnimation(elm, final_value_in){
 }
 
 $(document).ready(function(){
-	jQuery('.climate-change-content').not('.climate-change-content-present').hide();
+	// jQuery('.climate-change-content').not('.climate-change-content-present').hide();
 	jQuery(".next-arrow").click(function(){
-		jQuery(this).closest('.climate-change-content').hide();
-		jQuery(this).closest('.climate-change-content').next().show();
+		// jQuery(this).closest('.climate-change-content').hide();
+		// jQuery(this).closest('.climate-change-content').next().show();
 
 		// current_high = jQuery(this).closest('.climate-change-content').find('.temp-left .degree-number');
 		// console.log('Current High' + current_high);
@@ -54,9 +54,9 @@ $(document).ready(function(){
 	});
 
 	jQuery(".prev-arrow").click(function(){
-		jQuery(this).closest('.climate-change-content').hide();
-		elm = jQuery(this).closest('.climate-change-content').prev();
-		elm.show();
+		// jQuery(this).closest('.climate-change-content').hide();
+		// elm = jQuery(this).closest('.climate-change-content').prev();
+		// elm.show();
 
 		// current_high = jQuery(this).closest('.climate-change-content').find('.temp-left .degree-number');
 		// console.log('Current High' + current_high);
