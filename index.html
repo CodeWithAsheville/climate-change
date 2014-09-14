@@ -226,7 +226,7 @@
     </div>   
     <div class='climate-change-content-window'>
       <!-- Start Present -->
-      <div class='container climate-change-content climate-change-content-present' ng-show="showPresent" ng-click="showPresent = false; load_json();" ng-swipe-left="showPresent = false" >
+      <div class='container climate-change-content climate-change-content-present' ng-show="showPresent" ng-click="showPresent = false; load_json();" nganimate="climate-content-transition" ng-swipe-left="showPresent = false" >
         <div class='row'>
           <div class="col-xs-12 text-center climate-content-header">
             <div class="time-frame"><h3>Present AVG</h3> <span>(1999 - Now) | </span><span class='current_month'>{{opts.month_name}}</span> </div>
