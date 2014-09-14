@@ -9,7 +9,7 @@ myApp.controller('HomeController', function ($scope, $http) {
   $scope.opts = {
     future_start: 2046, 
     future_end: 2065, 
-    basin_id: 385,
+    basin_id: 352,
     month: 1,
   };
   
@@ -25,32 +25,32 @@ myApp.controller('HomeController', function ($scope, $http) {
     var url_max = url_start + "mavg/ensemble/a2/50/tmax_means" + url_end;
     var url_pre = url_start + "mavg/ensemble/a2/50/ppt_means" + url_end;
     var url_amin = url_start + "manom/ensemble/a2/50/tmin_means" + url_end;
-    var url_amax = url_start + "manom/ensemble/a2/50/tmax_means/" + url_end;
+    var url_amax = url_start + "manom/ensemble/a2/50/tmax_means" + url_end;
     var url_wund = "http://www.corsproxy.com/api.wunderground.com/api/fcb068a143892194/almanac/q/" + $scope.location.k + "," + $scope.location.B + ".json";
     
-    $http.get(url_min).
-      success(function(data, status, headers, config) {
-        console.log(data);
-        $scope.future.avg_low = round(data[0].monthVals[$scope.opts.month]);
-        // $scope.present.avg_low = round(data[0].monthVals[$scope.opts.month] - 3);
-        $http.get(url_amax).
-          success(function(data, status, headers, config) {
-            console.log(data);
-            $scope.past.avg_high = round($scope.future.avg_high - data[0].monthVals[$scope.opts.month]);
-          });
-      });
-    $http.get(url_max).
-      success(function(data, status, headers, config) {
-        console.log(data);
-        $scope.future.avg_high = round(data[0].monthVals[$scope.opts.month]);
-        // $scope.present.avg_high = round(data[0].monthVals[$scope.opts.month] - 3);
-        $http.get(url_amin).
-          success(function(data, status, headers, config) {
-            console.log(data);
-            $scope.past.avg_low = round($scope.future.avg_low - data[0].monthVals[$scope.opts.month]);
-          });
-      });
-    
+    // $http.get(url_min).
+    //   success(function(data, status, headers, config) {
+    //     console.log(data);
+    //     $scope.future.avg_low = round(data[0].monthVals[$scope.opts.month]);
+    //     // $scope.present.avg_low = round(data[0].monthVals[$scope.opts.month] - 3);
+    //     $http.get(url_amax).
+    //       success(function(data, status, headers, config) {
+    //         console.log(data);
+    //         $scope.past.avg_high = round($scope.future.avg_high - data[0].monthVals[$scope.opts.month]);
+    //       });
+    //   });
+    // $http.get(url_max).
+    //   success(function(data, status, headers, config) {
+    //     console.log(data);
+    //     $scope.future.avg_high = round(data[0].monthVals[$scope.opts.month]);
+    //     // $scope.present.avg_high = round(data[0].monthVals[$scope.opts.month] - 3);
+    //     $http.get(url_amin).
+    //       success(function(data, status, headers, config) {
+    //         console.log(data);
+    //         $scope.past.avg_low = round($scope.future.avg_low - data[0].monthVals[$scope.opts.month]);
+    //       });
+    //   });
+    // 
     $http.get(url_pre).
       success(function(data, status, headers, config) {
         console.log(data);
@@ -61,8 +61,20 @@ myApp.controller('HomeController', function ($scope, $http) {
       success(function(data, status, headers, config) {
         console.log("wund");
         console.log(data);
-        $scope.present.avg_high = data.almanac.temp_high.normal.C;
-        $scope.present.avg_low = data.almanac.temp_low.normal.C;
+        $scope.present.avg_high = parseInt(data.almanac.temp_high.normal.C);
+        $scope.present.avg_low = parseInt(data.almanac.temp_low.normal.C);
+        
+        $http.get(url_amax).
+          success(function(data, status, headers, config) {
+            console.log(data);
+            $scope.future.avg_high = round($scope.present.avg_high + data[0].monthVals[$scope.opts.month]);
+          });
+        
+        $http.get(url_amin).
+          success(function(data, status, headers, config) {
+            console.log(data);
+            $scope.future.avg_low = round($scope.present.avg_low + data[0].monthVals[$scope.opts.month]);
+          });
       });
     }
     
